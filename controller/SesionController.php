@@ -22,7 +22,8 @@ class SesionController{
             $resultado = $this->sesionModel->getUsuario($usuario, $pass);
             if ($resultado){
                 $_SESSION['usuario'] = $usuario;
-                header("location: /homeAdmin");
+                $data['usuario'] = $_POST['usuario'];
+                echo $this->render->render("view/homeAdminView.php", $data);
             }
             else{
                 session_destroy();
@@ -35,6 +36,7 @@ class SesionController{
     }
 
     public function cerrarSesion(){
+        session_start();
         session_destroy();
         header("location: /home");
     }
