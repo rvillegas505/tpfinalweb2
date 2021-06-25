@@ -27,13 +27,10 @@ class RegistroController{
               
 
                 $this->registroModel->guardarRegistro($valoresConsulta);
-                echo "Registrado con exito, aguarde al email y al administrador del sistema. <br><br>";
-                echo "<a href='/home'><button class='btn btn-danger'>Volver</button></a>";
-                
+                echo $this->render->render("view/registroExitosoView.php");
             }
             else{
-                echo "Error. Complete el formulario y vuelva a enviarlo. <br><br>";
-                echo "<a href='/home'><button class='btn btn-danger'>Volver</button></a>";
+                echo $this->render->render("view/errorView.php");
             }
         }
 

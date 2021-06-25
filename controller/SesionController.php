@@ -22,16 +22,18 @@ class SesionController{
             $resultado = $this->sesionModel->getUsuario($usuario, $pass);
             if ($resultado){
                 $_SESSION['usuario'] = $usuario;
-                $data['usuario'] = $_POST['usuario'];
-                echo $this->render->render("view/homeAdminView.php", $data);
+
+                header("location: /homeAdmin");
+                // $data['usuario'] = $_POST['usuario'];
+                // echo $this->render->render("view/homeAdminView.php", $data);
             }
             else{
                 session_destroy();
-                header("location: /registro");
+                echo $this->render->render("view/errorView.php");
             }
         }
         else{
-            echo "error";
+            header("location: /registro");
         }
     }
 
