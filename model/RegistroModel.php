@@ -19,8 +19,8 @@ class RegistroModel
         $this->database->execute("INSERT INTO empleados (nombreApellido, dni, email, pass) VALUES ('rodri', '12345678', 'rodri@gmail.com', '123456'");
     }
 
-    public function verificarCorreo($email){
-        $sql = "SELECT COUNT(*) FROM empleados WHERE email = '$email'";
+    public function getCorreo($email){
+        $sql = "SELECT * FROM empleados WHERE email = '$email'";
         return $this->database->query($sql);
     }
 
