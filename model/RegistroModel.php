@@ -20,16 +20,12 @@ class RegistroModel
     }
 
     public function verificarCorreo($email){
-        $sql = "SELECT * FROM empleados WHERE email = " . $email . ";";
+        $sql = "SELECT COUNT(*) FROM empleados WHERE email = '$email'";
+        return $this->database->query($sql);
     }
 
     public function getCancion($id){
         $sql = "SELECT * FROM canciones where idCancion = " . $id;
-        return $this->database->query($sql);
-    }
-
-    public function existeEmail($email){
-        $sql = "SELECT * FROM empleados where email = " . $email;
         return $this->database->query($sql);
     }
 }
