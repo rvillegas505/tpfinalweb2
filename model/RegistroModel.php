@@ -24,6 +24,7 @@ class RegistroModel
         return $this->database->query($sql);
     }
 
+    //Query para verificar que no se pueda registrar un email existente en la bd pero me lanza un exception xd
     public function existeEmail($email){
         $sql = "SELECT * FROM empleados where email = " . $email;
         return $this->database->query($sql);

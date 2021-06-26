@@ -11,9 +11,11 @@ include_once("controller/TourController.php");
 include_once("controller/QuieroSerParteController.php");
 
 include_once("model/RegistroModel.php");
+include_once("model/LoginModel.php");
 
 include_once("controller/HomeController.php");
 include_once("controller/RegistroController.php");
+include_once("controller/LoginController.php");
 
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
