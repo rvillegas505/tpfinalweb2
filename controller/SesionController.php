@@ -1,7 +1,7 @@
 <?php
 
 class SesionController{
-    private $SesionModel;
+    private $sesionModel;
     private $render;
 
     public function __construct($sesionModel, $render){
@@ -9,10 +9,7 @@ class SesionController{
         $this->render = $render;
     }
 
-    // public function execute(){
-    //     echo $this->render->render("view/registroView.php");
-    // }
-
+    
     public function inicioSesion(){
         if (isset($_POST['usuario'])){
 
@@ -21,11 +18,20 @@ class SesionController{
 
             $resultado = $this->sesionModel->getUsuario($usuario, $pass);
             if ($resultado){
-                $_SESSION['usuario'] = $usuario;
+                $_SESSION['usuario']= $resultado["0"]["nombreApellido"];
 
-                header("location: /homeAdmin");
-                // $data['usuario'] = $_POST['usuario'];
-                // echo $this->render->render("view/homeAdminView.php", $data);
+                $rol = $resultado["0"]["rol"];
+
+                switch($rol){
+                    case "admin": 
+                        header("location: /homeAdmin");
+                        break;
+                    case "chofer":
+                        header("location: /homechofer");
+                        break;
+                    default:
+                        header("location: /home");
+                }
             }
             else{
                 session_destroy();
