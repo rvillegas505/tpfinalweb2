@@ -11,11 +11,12 @@ include_once("controller/TourController.php");
 include_once("controller/QuieroSerParteController.php");
 
 include_once("model/RegistroModel.php");
-include_once("model/LoginModel.php");
+include_once("model/SesionModel.php");
 
 include_once("controller/HomeController.php");
 include_once("controller/RegistroController.php");
-include_once("controller/LoginController.php");
+include_once("controller/SesionController.php");
+include_once("controller/HomeAdminController.php");
 
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
@@ -50,6 +51,11 @@ class Configuration{
         return new RegistroModel($database);
     }
 
+    public function getSesionModel(){
+        $database = $this->getDatabase();
+        return new SesionModel($database);
+    }
+
     public function getRender(){
         return new Render('view/partial');
     }
@@ -59,9 +65,18 @@ class Configuration{
         return new HomeController($this->getRender());
     }
 
+    public function getHomeAdminController(){
+        return new HomeAdminController($this->getRender());
+    }
+
     public function getRegistroController(){
         $registroModel = $this->getRegistroModel();
         return new RegistroController($registroModel, $this->getRender());
+    }
+
+    public function getSesionController(){
+        $sesionModel = $this->getSesionModel();
+        return new SesionController($sesionModel, $this->getRender());
     }
 
     public function getTourController(){
