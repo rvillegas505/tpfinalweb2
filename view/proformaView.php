@@ -60,7 +60,7 @@
 
     <!--SECCION CARGA-->
     <hr class="bg-dark d-block py-1">
-    <h4 class="my-3">Viaje</h4>
+    <h4 class="my-3">Carga</h4>
 
     <div class="form-group">
         <label for="tipoCarga">Tipo De Carga</label>
