@@ -1,6 +1,7 @@
 <?php
 
-class ProformaModel{
+class ProformaModel
+{
     private $database;
 
     public function __construct($database)
@@ -11,7 +12,12 @@ class ProformaModel{
 
 
     public function guardarProforma($proforma){
-        $insert = "INSERT INTO `proforma` (dato, dato, dato)" .  $proforma . ";";
+        $insert = "INSERT INTO `proforma` (`id_proforma`, `fecha_proforma`) VALUES (NULL, '$proforma');";
+        $this->database->execute($insert);
+    }
+
+    public function guardarChoferProforma($dni){
+        $insert = "INSERT INTO `chofer` (dni) VALUES (" .  $dni . ");";
         $this->database->execute($insert);
     }
 }

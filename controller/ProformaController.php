@@ -20,7 +20,21 @@ class ProformaController{
     }
 
     public function procesarProforma(){
-        echo "hola"; 
+        if (isset($_POST['fechaProforma'])){
+
+
+            $proforma=$_POST['fechaProforma'];
+            $this->proformaModel->guardarProforma($proforma);
+            $choferdni=$_POST['dniChofer'];
+
+            $this->proformaModel->guardarChoferProforma($choferdni);
+
+            echo "hola  " . $proforma  . $choferdni;
+
+        }
+        else{
+            echo "error";
+        }
     }
     
 }
