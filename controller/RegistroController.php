@@ -17,7 +17,7 @@ class RegistroController{
 
         if (isset($_POST['submit'])){
             if (strlen($_POST['nombre']) > 3 &&  strlen($_POST['dni']) == 8 && strlen($_POST['email']) > 5 && strlen($_POST['password']) > 3){
-
+                if($this->registroModel->getCorreo($_POST['email']) == null){
                 $nombre = $_POST['nombre'];
                 $dni  = $_POST['dni'];
                 $fechaNac = $_POST['fechaNac'];
@@ -28,6 +28,9 @@ class RegistroController{
 
                 $this->registroModel->guardarRegistro($valoresConsulta);
                 echo $this->render->render("view/registroExitosoView.php");
+                }else{
+                    echo $this->render->render("view/emailExistenteView.php");
+                }
             }
             else{
                 echo $this->render->render("view/errorView.php");
