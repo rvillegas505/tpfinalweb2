@@ -12,11 +12,13 @@ include_once("controller/QuieroSerParteController.php");
 
 include_once("model/RegistroModel.php");
 include_once("model/SesionModel.php");
+include_once("model/ProformaModel.php");
 
 include_once("controller/HomeController.php");
 include_once("controller/RegistroController.php");
 include_once("controller/SesionController.php");
 include_once("controller/HomeAdminController.php");
+include_once("controller/ProformaController.php");
 
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
@@ -56,6 +58,11 @@ class Configuration{
         return new SesionModel($database);
     }
 
+    public function getProformaModel(){
+        $database = $this->getDatabase();
+        return new ProformaModel($database);
+    }
+
     public function getRender(){
         return new Render('view/partial');
     }
@@ -77,6 +84,11 @@ class Configuration{
     public function getSesionController(){
         $sesionModel = $this->getSesionModel();
         return new SesionController($sesionModel, $this->getRender());
+    }
+
+    public function getProformaController(){
+        $proformaModel = $this->getProformaModel();
+        return new ProformaController($proformaModel, $this->getRender());
     }
 
     public function getTourController(){
