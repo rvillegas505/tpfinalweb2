@@ -26,6 +26,5 @@ class RegistroModel
 
     public function getCorreo($email){
         $sql = "SELECT * FROM empleados WHERE email = '$email'";
-        return $this->database->query($sql);
     }
 }
