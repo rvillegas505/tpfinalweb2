@@ -21,7 +21,7 @@ class SesionController{
                 $_SESSION['usuario']= $resultado["0"]["nombreApellido"];
 
                 $rol = $resultado["0"]["rol"];
-
+                $_SESSION['rol']=$rol;
                 switch($rol){
                     case "admin": 
                         header("location: /homeAdmin");

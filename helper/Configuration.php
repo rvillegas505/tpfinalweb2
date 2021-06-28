@@ -19,6 +19,7 @@ include_once("controller/RegistroController.php");
 include_once("controller/SesionController.php");
 include_once("controller/HomeAdminController.php");
 include_once("controller/ProformaController.php");
+include_once("controller/HomeChoferController.php");
 
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
@@ -74,6 +75,10 @@ class Configuration{
 
     public function getHomeAdminController(){
         return new HomeAdminController($this->getRender());
+    }
+
+    public function getHomeChoferController(){
+        return new HomeChoferController($this->getRender());
     }
 
     public function getRegistroController(){

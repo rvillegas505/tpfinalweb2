@@ -20,7 +20,7 @@ class ProformaController{
     }
 
     public function procesarProforma(){
-        echo "hola";
+        echo "hola"; 
     }
     
 }

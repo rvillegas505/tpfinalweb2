@@ -1,6 +1,6 @@
 <?php
 
-class HomeAdminController
+class HomeChoferController
 {
     private $render;
 
@@ -11,9 +11,9 @@ class HomeAdminController
 
     public function execute()
     {
-        if ($_SESSION['usuario'] != null && $_SESSION['rol']=='admin'){
+        if ($_SESSION['usuario'] != null && $_SESSION['rol']=='chofer'){
             $data['usuario'] = $_SESSION['usuario'];
-            echo $this->render->render("view/homeAdminView.php", $data);
+            echo $this->render->render("view/homeChoferView.php", $data);
         }
         else{
             echo $this->render->render("view/errorView.php");
