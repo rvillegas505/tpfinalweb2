@@ -34,7 +34,7 @@ class ProformaController{
             $clienteEmail = $_POST['emailCliente'];
             $this->proformaModel->guardarClienteProforma($clienteCuit, $proforma, $clienteDireccion, $clienteTelefono, $clienteEmail);
 
-            echo "hola  " . $proforma  . $choferdni;
+            echo $this->render->render("view/proformaCargadaView.php");
 
         }
         else{
