@@ -20,4 +20,9 @@ class ProformaModel
         $insert = "INSERT INTO `chofer` (dni) VALUES (" .  $dni . ");";
         $this->database->execute($insert);
     }
+
+    public function guardarClienteProforma($cuit, $id_proforma, $direccion, $telefono, $email){
+        $insert = "INSERT INTO `cliente` (`cuit`, `id_proforma`, `direccion`, `telefono`, `email`) VALUES ('$cuit', '$id_proforma', '$direccion', '$telefono', '$email');";
+        $this->database->execute($insert);
+    }
 }

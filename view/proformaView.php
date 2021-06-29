@@ -19,7 +19,7 @@
 
     <div class="form-group">
         <label for="cuitCliente">CUIT</label>
-        <input type="number" class="form-control" name="cuit" id="cuitCliente">
+        <input type="number" class="form-control" name="cuitCliente" id="cuitCliente">
     </div>
     <div class="form-group">
         <label for="direccionCliente">Direccion</label>

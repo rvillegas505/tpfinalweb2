@@ -22,14 +22,19 @@ class ProformaController{
     public function procesarProforma(){
         if (isset($_POST['fechaProforma'])){
 
-
             $proforma=$_POST['fechaProforma'];
             $this->proformaModel->guardarProforma($proforma);
-            $choferdni=$_POST['dniChofer'];
 
+            $choferdni=$_POST['dniChofer'];
             $this->proformaModel->guardarChoferProforma($choferdni);
 
-            echo "hola  " . $proforma  . $choferdni;
+            $clienteCuit = $_POST['cuitCliente'];
+            $clienteDireccion = $_POST['direccionCliente'];
+            $clienteTelefono = $_POST['telefonoCliente'];
+            $clienteEmail = $_POST['emailCliente'];
+            $this->proformaModel->guardarClienteProforma($clienteCuit, $proforma, $clienteDireccion, $clienteTelefono, $clienteEmail);
+
+            echo $this->render->render("view/proformaCargadaView.php");
 
         }
         else{
