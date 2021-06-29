@@ -64,7 +64,7 @@
 
     <div class="form-group">
         <label for="tipoCarga">Tipo De Carga</label>
-        <select class="form-control" id="tipoCarga">
+        <select class="form-control" name="tipoCarga" id="tipoCarga">
             <option name="granel" value="granel">granel</option>
             <option name="liquida" value="liquida">liquida</option>
             <option name="20" value="20">20</option>
