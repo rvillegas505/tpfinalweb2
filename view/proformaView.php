@@ -1,5 +1,9 @@
 {{>headerLogeado}}
 
+<head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="../functions.js"></script>
+</head>
+
 <a href="/homeAdmin"><button class="btn btn-dark my-3">Volver a Home</button></a>
 
 <div class="container-md my-3 col-md-6">
@@ -7,10 +11,14 @@
 </div>
 
 <div class="container-md my-3 col-md-6">
-    <form action="/proforma/procesarProforma" method="POST">
-    <div class="form-group">
-        <label for="fechaProforma">Fecha</label>
-        <input type="date" class="form-control" name="fechaProforma" id="fechaProforma">
+<form action="/proforma/procesarProforma" class="row g-3 needs-validation" method="POST" novalidate>
+
+    <div class="col-md-12">
+        <label for="validation">Fecha</label>
+        <input type="date" class="form-control" name="fechaProforma" id="validation" required>
+        <div class="invalid-feedback">
+            Seleccione fecha de creación de proforma.
+        </div>
     </div>
 
     <!--SECCION CLIENTE-->
@@ -18,20 +26,39 @@
     <h4 class="my-3">Cliente</h4>
 
     <div class="form-group">
+        <label for="nombreCliente">Nombre y apellido</label>
+        <input type="text" class="form-control" name="nombreCliente" id="nombreCliente" required>
+        <div class="invalid-feedback">
+            Ingrese nombre y apellido del cliente.
+        </div>
+    </div>
+    <div class="form-group">
         <label for="cuitCliente">CUIT</label>
-        <input type="number" class="form-control" name="cuitCliente" id="cuitCliente">
+        <input type="number" class="form-control" name="cuitCliente" id="cuitCliente" required>
+        <div class="invalid-feedback">
+            Ingrese CUIT del cliente.
+        </div>
     </div>
     <div class="form-group">
         <label for="direccionCliente">Direccion</label>
-        <input type="text" class="form-control" name="direccionCliente" id="direccionCliente">
+        <input type="text" class="form-control" name="direccionCliente" id="direccionCliente" required>
+        <div class="invalid-feedback">
+            Ingrese dirección del cliente.
+        </div>
     </div>
     <div class="form-group">
         <label for="telefonoCliente">Telefono</label>
-        <input type="number" class="form-control" name="telefonoCliente" id="telefonoCliente">
+        <input type="number" class="form-control" name="telefonoCliente" id="telefonoCliente" required>
+        <div class="invalid-feedback">
+            Número de teléfono no válido.
+        </div>
     </div>
     <div class="form-group">
         <label for="emailCliente">Email</label>
-        <input type="email" class="form-control" name="emailCliente" id="emailCliente">
+        <input type="email" class="form-control" name="emailCliente" id="emailCliente" required>
+        <div class="invalid-feedback">
+            Email no válido.
+        </div>
     </div>
 
     <!--SECCION VIAJE-->
@@ -40,22 +67,26 @@
 
     <div class="form-group">
         <label for="origenViaje">Origen</label>
-        <input type="text" class="form-control" name="origenViaje" id="origenViaje">
+        <input type="text" class="form-control" name="origenViaje" id="origenViaje" required>
+        <div class="invalid-feedback">
+            Ingrese lugar de origen del viaje.
+        </div>
     </div>
 
     <div class="form-group">
         <label for="destinoViaje">Destino</label>
-        <input type="text" class="form-control" name="destinoViaje" id="destinoViaje">
+        <input type="text" class="form-control" name="destinoViaje" id="destinoViaje" required>
+        <div class="invalid-feedback">
+            Ingrese lugar de destino del viaje.
+        </div>
     </div>
 
     <div class="form-group">
         <label for="fechaCarga">Fecha de Carga</label>
-        <input type="date" class="form-control" name="fechaCarga" id="fechaCarga">
-    </div>
-
-    <div class="form-group">
-        <label for="etaViaje">ETA (en horas)</label>
-        <input type="number" class="form-control" name="etaViaje" id="etaViaje">
+        <input type="date" class="form-control" name="fechaCarga" id="fechaCarga" required>
+        <div class="invalid-feedback">
+            Seleccione fecha de carga del viaje.
+        </div>
     </div>
 
     <!--SECCION CARGA-->
@@ -65,80 +96,135 @@
     <div class="form-group">
         <label for="tipoCarga">Tipo De Carga</label>
         <select class="form-control" name="tipoCarga" id="tipoCarga">
-            <option name="granel" value="granel">granel</option>
-            <option name="liquida" value="liquida">liquida</option>
-            <option name="20" value="20">20</option>
-            <option name="40" value="40">40</option>
-            <option name="jaula" value="jaula">jaula</option>
-            <option name="carcarrier" value="carcarrier">carcarrier</option>
-        </select> 
+            <option name="granel" value="granel">Granel</option>
+            <option name="liquida" value="liquida">Líquida</option>
+            <option name="20" value="20">20"</option>
+            <option name="40" value="40">40"</option>
+            <option name="jaula" value="jaula">Jaula</option>
+            <option name="carcarrier" value="carcarrier">CarCarrier</option>
+        </select>
     </div>
-    
+
     <div class="form-group">
         <label for="pesoNeto">Peso Neto</label>
-        <input type="number" class="form-control" name="pesoNeto" id="pesoNeto">
+        <input type="number" class="form-control" name="pesoNeto" id="pesoNeto" required>
+        <div class="invalid-feedback">
+            Ingrese peso neto de la carga.
+        </div>
     </div>
 
     <!--SECCION Costeo-->
     <hr class="bg-dark d-block py-1">
     <h4 class="my-3">Costeo (ESTIMADO)</h4>
 
-    <div class="form-group">
-        <label for="kilometrosEstimado">Kilometros (ESTIMADO)</label>
-        <input type="number" class="form-control" name="kilometrosEstimado" id="kilometrosEstimado">
+    <div class="col-md-6">
+         <label for="kilometrosEstimado">Kilometros</label>
+         <input type="number" class="form-control" name="kilometrosEstimado" id="kilometrosEstimado" required>
+        <div class="invalid-feedback">
+            Ingrese KM estimados para el viaje.
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="combustibleEstimado">Combustible</label>
+        <input type="number" class="form-control" name="combustibleEstimado" id="combustibleEstimado" required>
+        <div class="invalid-feedback">
+            Ingrese combustible estimado para el viaje.
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="etdCosteoEstimado">ETD</label>
+        <input type="time" class="form-control" name="etdCosteoEstimado" id="etdCosteoEstimado" required>
+        <div class="invalid-feedback">
+            Ingrese ETD.
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="etaCosteoEstimado">ETA</label>
+        <input type="time" class="form-control" name="etaCosteoEstimado" id="etaCosteoEstimado" required>
+        <div class="invalid-feedback">
+            Ingrese ETA.
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="viaticosEstimado">Viaticos</label>
+        <input type="number" class="form-control" name="viaticosEstimado" id="viaticosEstimado" required>
+        <div class="invalid-feedback">
+            Complete el campo.
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="peajesPesajesEstimado">Peajes y Pesajes</label>
+        <input type="number" class="form-control" name="peajesPesajesEstimado" id="peajesPesajesEstimado" required>
+        <div class="invalid-feedback">
+            Complete el campo.
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="extrasEstimado">Extras</label>
+        <input type="number" class="form-control" name="extrasEstimado" id="extrasEstimado" required>
+        <div class="invalid-feedback">
+            Complete el campo.
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="hazardEstimado">Hazard</label>
+        <input type="number" class="form-control" name="hazardEstimado" id="hazardEstimado" required>
+        <div class="invalid-feedback">
+            Complete el campo.
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label for="reeferEstimado">Reefe</label>
+        <input type="number" class="form-control" name="reeferEstimado" id="reeferEstimado" required>
+        <div class="invalid-feedback">
+            Complete el campo.
+        </div>
+        </div>
+        <div class="col-md-6">
+        <label for="feeEstimado">Fee</label>
+        <input type="number" class="form-control" name="feeEstimado" id="feeEstimado" required>
+        <div class="invalid-feedback">
+            Complete el campo.
+        </div>
     </div>
 
     <div class="form-group">
-        <label for="combustibleEstimado">Combustible (ESTIMADO)</label>
-        <input type="number" class="form-control" name="combustibleEstimado" id="combustibleEstimado">
+        <label for="totalEstimado">Total</label>
+        <input type="number" class="form-control" name="totalEstimado" id="totalEstimado" required>
+        <div class="invalid-feedback">
+            Complete el campo.
+        </div>
     </div>
+
+    <!--SECCION Personal-->
+
+    <hr class="bg-dark d-block py-1">
+    <h4 class="my-3">Personal</h4>
 
     <div class="form-group">
-        <label for="etdCosteoEstimado">ETD (ESTIMADO)</label>
-        <input type="number" class="form-control" name="etdCosteoEstimado" id="etdCosteoEstimado">
+        <label for="dniChofer">Chofer</label>
+        <input type="number" class="form-control" name="dniChofer" id="dniChofer" placeholder="DNI" required>
+        <div class="invalid-feedback">
+            Ingrese DNI del chofer.
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="etaCosteoEstimado">ETA (ESTIMADO)</label>
-        <input type="number" class="form-control" name="etaCosteoEstimado" id="etaCosteoEstimado">
+    <div class="container d-flex justify-content-center">
+    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
     </div>
 
-    <div class="form-group">
-        <label for="viaticosEstimado">Viaticos (ESTIMADO)</label>
-        <input type="number" class="form-control" name="viaticosEstimado" id="viaticosEstimado">
-    </div>
+</form>
+</div>
 
-    <div class="form-group">
-        <label for="peajesPesajesEstimado">Peajes y Pesajes (ESTIMADO)</label>
-        <input type="number" class="form-control" name="peajesPesajesEstimado" id="peajesPesajesEstimado">
-    </div>
 
-    <div class="form-group">
-        <label for="extrasEstimado">Extras (ESTIMADO)</label>
-        <input type="number" class="form-control" name="extrasEstimado" id="extrasEstimado">
-    </div>
 
-    <div class="form-group">
-        <label for="hazardEstimado">Hazard (ESTIMADO)</label>
-        <input type="number" class="form-control" name="hazardEstimado" id="hazardEstimado">
-    </div>
-
-    <div class="form-group">
-        <label for="reeferEstimado">Reefer (ESTIMADO)</label>
-        <input type="number" class="form-control" name="reeferEstimado" id="reeferEstimado">
-    </div>
-
-    <div class="form-group">
-        <label for="feeEstimado">Fee (ESTIMADO)</label>
-        <input type="number" class="form-control" name="feeEstimado" id="feeEstimado">
-    </div>
-
-    <div class="form-group">
-        <label for="totalEstimado">Total (ESTIMADO)</label>
-        <input type="number" class="form-control" name="totalEstimado" id="totalEstimado">
-    </div>
-
-    <!--SECCION Costeo REAL-->
+<script src="../functions.js"></script>
+<!--
+    SECCION Costeo REAL
     <hr class="bg-dark d-block py-1">
     <h4 class="my-3">Costeo (REAL)</h4>
 
@@ -197,21 +283,6 @@
         <input type="number" class="form-control" name="totalReal" id="totalReal">
     </div>
 
-
-
-    <!--SECCION Personal-->
-
-    <hr class="bg-dark d-block py-1">
-    <h4 class="my-3">Personal</h4>
-
-    <div class="form-group">
-        <label for="dniChofer">Chofer (DNI)</label>
-        <input type="number" class="form-control" name="dniChofer" id="dniChofer">
-    </div>
-    
-    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
-    </form>
-</div>
-
+-->
 
 {{>footer}}

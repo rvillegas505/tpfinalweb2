@@ -17,5 +17,3 @@ class TourController
         echo $this->render->render("view/tourView.php", $data);
     }
 }
-
-//hola xdxd

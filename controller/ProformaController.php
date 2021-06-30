@@ -22,16 +22,35 @@ class ProformaController{
     public function procesarProforma(){
         if (isset($_POST['fechaProforma'])){
 
-            $proforma=$_POST['fechaProforma'];
-            $this->proformaModel->guardarProforma($proforma);
-
-            $clienteCuit = $_POST['cuitCliente'];
-            $clienteDireccion = $_POST['direccionCliente'];
-            $clienteTelefono = $_POST['telefonoCliente'];
-            $clienteEmail = $_POST['emailCliente'];
-            $this->proformaModel->guardarClienteProforma($clienteCuit, $proforma, $clienteDireccion, $clienteTelefono, $clienteEmail);
-
+            $fechaProforma=$_POST['fechaProforma'];
             $dniChofer=$_POST['dniChofer'];
+            $nombreCliente = $_POST['nombreCliente'];
+            $cuitCliente = $_POST['cuitCliente'];
+            $direccionCliente = $_POST['direccionCliente'];
+            $clienteTelefono = $_POST['telefonoCliente'];
+            $emailCliente = $_POST['emailCliente'];
+            $origenViaje = $_POST['origenViaje'];
+            $destinoViaje = $_POST['destinoViaje'];
+            $fechaCarga = $_POST['fechaCarga'];
+            $tipoCarga=$_POST['tipoCarga'];
+            $pesoNeto = $_POST['pesoNeto'];
+            $kilometrosEstimado=$_POST['kilometrosEstimado'];
+            $combustibleEstimado = $_POST['combustibleEstimado'];
+            $etdCosteoEstimado = $_POST['etdCosteoEstimado'];
+            $etaCosteoEstimado = $_POST['etaCosteoEstimado'];
+            $viaticosEstimado = $_POST['viaticosEstimado'];
+            $peajesPesajesEstimado = $_POST['peajesPesajesEstimado'];
+            $extrasEstimado = $_POST['extrasEstimado'];
+            $hazardEstimado = $_POST['hazardEstimado'];
+            $reeferEstimado = $_POST['reeferEstimado'];
+            $feeEstimado = $_POST['feeEstimado'];
+            $totalEstimado = $_POST['totalEstimado'];
+            $this->proformaModel->guardarProforma($fechaProforma, $dniChofer,$nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
+
+
+            /*$dniChofer=$_POST['dniChofer'];
+            $this->proformaModel->guardarChoferProforma($dniChofer);
+
             $origenViaje = $_POST['origenViaje'];
             $destinoViaje = $_POST['destinoViaje'];
             $fechaCarga = $_POST['fechaCarga'];
@@ -53,7 +72,7 @@ class ProformaController{
             $reeferEstimado = $_POST['reeferEstimado'];
             $feeEstimado = $_POST['feeEstimado'];
             $totalEstimado = $_POST['totalEstimado'];
-            $this->proformaModel->guardarCosteoEstimadoProforma($kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
+            $this->proformaModel->guardarCosteoEstimadoProforma($fechaProforma, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
 
             $kilometrosReal = $_POST['kilometrosReal'];
             $combustibleReal = $_POST['combustibleReal'];
@@ -66,10 +85,9 @@ class ProformaController{
             $reeferReal = $_POST['reeferReal'];
             $feeReal = $_POST['feeReal'];
             $totalReal = $_POST['totalReal'];
-            $this->proformaModel->guardarCosteoEstimadoProforma($kilometrosReal, $combustibleReal, $etdCosteoReal, $etaCosteoReal, $viaticosReal, $peajesPesajesReal, $extrasReal, $hazardReal, $reeferReal, $feeReal, $totalReal);
+            $this->proformaModel->guardarCosteoEstimadoProforma($fechaProforma, $kilometrosReal, $combustibleReal, $etdCosteoReal, $etaCosteoReal, $viaticosReal, $peajesPesajesReal, $extrasReal, $hazardReal, $reeferReal, $feeReal, $totalReal);
+            */
 
-            $dniChofer=$_POST['dniChofer'];
-            $this->proformaModel->guardarChoferProforma($dniChofer);
 
             echo $this->render->render("view/proformaCargadaView.php");
 
