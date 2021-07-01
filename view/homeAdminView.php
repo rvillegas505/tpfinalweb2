@@ -2,25 +2,17 @@
 
 <h3>ESTAS LOGEADO</h3>
 
-<a href="/proforma"><button class="btn btn-dark my-3">Llenar Proforma</button></a>
+<div class="row p-5">
+    <div class="container-md my-5 border col-sm-4">
+        <h2 class="my-3">Proformas</h2>
+        <a href="/proforma"><button class="btn btn-dark my-3">Llenar Proforma</button></a>
+        <a href="/homeadmin/verproformas"><button class="btn btn-dark my-3">Proformas Registradas</button></a>
+    </div>
 
-<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">Proformas Registradas</h2>
-    <table class="table table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th>N° Proforma</th>
-                <th>Fecha</th>            
-            </tr>
-        </thead>
-        <tbody>
-            {{#proformas}}
-            <tr>
-                <td>{{id_proforma}}</td>
-                <td>{{fecha_proforma}}</td>            
-            </tr>
-            {{/proformas}}
-        </tbody>
-    </table>
+    <div class="container-md my-5 border col-sm-4">
+        <h2 class="my-3">Proformas</h2>
+        <a href="/homeadmin/verempleados"><button class="btn btn-dark my-3">Ver Empleados</button></a>
+    </div>
 </div>
+
 {{>footer}}

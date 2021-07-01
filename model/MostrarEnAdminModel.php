@@ -1,6 +1,6 @@
 <?php
 
-class MostrarProformaModel
+class MostrarEnAdminModel
 {
     private $database;
 
@@ -11,5 +11,9 @@ class MostrarProformaModel
 
     public function getProformas(){
         return $this->database->query("SELECT * FROM transportes.proforma;");
+    }
+
+    public function getEmpleados(){
+        return $this->database->query("SELECT * FROM transportes.empleados;");
     }
 }
