@@ -10,7 +10,7 @@
     </div>
 
     <div class="container-md my-5 border col-sm-4">
-        <h2 class="my-3">Proformas</h2>
+        <h2 class="my-3">Empleados</h2>
         <a href="/homeadmin/verempleados"><button class="btn btn-dark my-3">Ver Empleados</button></a>
     </div>
 </div>
