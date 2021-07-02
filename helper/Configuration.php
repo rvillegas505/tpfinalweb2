@@ -13,6 +13,7 @@ include_once("controller/QuieroSerParteController.php");
 include_once("model/RegistroModel.php");
 include_once("model/SesionModel.php");
 include_once("model/ProformaModel.php");
+include_once("model/MostrarEnAdminModel.php");
 
 include_once("controller/HomeController.php");
 include_once("controller/RegistroController.php");
@@ -64,6 +65,11 @@ class Configuration{
         return new ProformaModel($database);
     }
 
+    public function getMostrarEnAdminModel(){
+        $database = $this->getDatabase();
+        return new MostrarEnAdminModel($database);
+    }
+
     public function getRender(){
         return new Render('view/partial');
     }
@@ -74,7 +80,8 @@ class Configuration{
     }
 
     public function getHomeAdminController(){
-        return new HomeAdminController($this->getRender());
+        $mostrarEnAdminModel = $this->getMostrarEnAdminModel();
+        return new HomeAdminController($this->getRender(), $mostrarEnAdminModel);
     }
 
     public function getHomeChoferController(){
