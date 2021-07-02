@@ -1,7 +1,6 @@
 CREATE DATABASE transportes;
 USE transportes;
 
-
 create table empleados (
 nombreApellido varchar(50), 
 dni int, 
@@ -9,41 +8,17 @@ fechaNac date,
 email varchar(40),
 pass varchar(20),
 rol varchar(20),
+disponible boolean,
 CONSTRAINT primary key (dni) 
 );
 
 create table proforma(id_proforma int auto_increment,
- fecha_proforma date,
- CONSTRAINT primary key (id_proforma));
- 
- create table cliente(cuit int,
- id_proforma int,
- direccion varchar(50),
- telefono long,
- email varchar(40),
- CONSTRAINT primary key (cuit),
- CONSTRAINT fk_id_proforma_cliente foreign key(id_proforma) references proforma(id_proforma));
- 
- create table chofer(dni int, primary key(dni));
- 
- create table viaje(id_viaje int auto_increment,
- id_proforma int,
- dni_chofer int,
- origen varchar(50),
- destino varchar(50),
- fecha_carga date,
- eta varchar(50),
- CONSTRAINT primary key(id_viaje),
- CONSTRAINT fk_id_proforma_viaje foreign key(id_proforma) references proforma(id_proforma),
- CONSTRAINT fk_dni_chofer_viaje foreign key(dni_chofer) references chofer(dni));
-
-create table carga(id_carga int auto_increment,
-tipo_carga varchar(50),
-peso_neto double,
-CONSTRAINT primary key(id_carga));
-
-create table costeo_estimado(id_costeo_estimado int auto_increment,
-id_proforma int,
+fecha_proforma date,
+dni_chofer int,
+cuit_cliente int,
+direccion_cliente varchar(50),
+telefono_cliente long,
+email_cliente varchar(40),
 km_estimado double,
 combustible_estimado double,
 etd_estimado double,
@@ -55,8 +30,24 @@ hazard_estimado double,
 reefer_estimado double,
 fee_estimado double,
 total_estimado double,
-CONSTRAINT primary key(id_costeo_estimado),
-CONSTRAINT fk_id_proforma_costeo_estimado foreign key(id_proforma) references proforma(id_proforma));
+CONSTRAINT primary key (id_proforma),
+CONSTRAINT fk_dni_chofer_proforma foreign key(dni_chofer) references empleados(dni));
+ 
+ create table viaje(id_viaje int auto_increment,
+ id_proforma int,
+ dni_chofer int,
+ origen varchar(50),
+ destino varchar(50),
+ fecha_carga date,
+ eta varchar(50),
+ CONSTRAINT primary key(id_viaje),
+ CONSTRAINT fk_id_proforma_viaje foreign key(id_proforma) references proforma(id_proforma),
+ CONSTRAINT fk_dni_chofer_viaje foreign key(dni_chofer) references empleados(dni));
+
+create table carga(id_carga int auto_increment,
+tipo_carga varchar(50),
+peso_neto double,
+CONSTRAINT primary key(id_carga));
 
 create table costeo_real(id_costeo_real int auto_increment,
 id_proforma int, 
@@ -73,3 +64,13 @@ fee_real double,
 total_real double,
 CONSTRAINT primary key(id_costeo_real),
 CONSTRAINT fk_id_proforma_costeo_real foreign key(id_proforma) references proforma(id_proforma)); 
+
+create table posicion_actual(id_posicion_actual int auto_increment,
+id_proforma int,
+km_recorridos double,
+combustible_gastado double,
+peajes double,
+extras double,
+total double,
+CONSTRAINT primary key(id_posicion_actual),
+CONSTRAINT fk_id_proforma_posicion_actual foreign key(id_proforma) references proforma(id_proforma));

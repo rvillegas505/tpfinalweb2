@@ -25,4 +25,9 @@ class ProformaModel
         $insert = "INSERT INTO `cliente` (`cuit`, `id_proforma`, `direccion`, `telefono`, `email`) VALUES ('$cuit', '$id_proforma', '$direccion', '$telefono', '$email');";
         $this->database->execute($insert);
     }
+
+    public function getProformas(){
+        $sql = "SELECT * FROM proforma";
+        return $this->database->query($sql);
+    }
 }
