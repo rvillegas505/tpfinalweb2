@@ -1,6 +1,6 @@
 <?php
 
-class ChoferControllerController{
+class ChoferController{
     private $choferModel;
     private $render;
 
