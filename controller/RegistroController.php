@@ -23,8 +23,7 @@ class RegistroController{
                 $fechaNac = $_POST['fechaNac'];
                 $email = $_POST['email'];
                 $password= $_POST['password'];
-                $valoresConsulta = " VALUES ('$nombre', $dni, '$fechaNac', '$email', '$password')";
-              
+                $valoresConsulta = " VALUES ('$nombre', $dni, '$fechaNac', '$email', '$password')";              
 
                 $this->registroModel->guardarRegistro($valoresConsulta);
                 echo $this->render->render("view/registroExitosoView.php");
