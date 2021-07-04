@@ -3,12 +3,12 @@
 class HomeChoferController
 {
     private $render;
-    private $choferModel;
+    private $mostrarEnChoferModel ;
 
-    public function __construct($choferModel, $render)
+    public function __construct($render, $mostrarEnChoferModel)
     {
-        $this->choferModel = $choferModel;
         $this->render = $render;
+        $this->mostrarEnChoferModel = $mostrarEnChoferModel;
     }
 
     public function execute()
@@ -50,4 +50,19 @@ class HomeChoferController
             echo "error";
         }
     }
+
+    public function registrardatos()
+    {
+        $data['prueba'] = $this->mostrarEnChoferModel->getPrueba();
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/datosViajeView.php", $data);
+    }
+
+    public function mostrarubicacion(){
+        $data['ubicacion'] = $this->mostrarEnChoferModel->getUbicacion();
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/datosViajeView.php", $data);
+
+    }
+
 }
