@@ -6,14 +6,18 @@
         <thead class="thead-dark">
             <tr>
                 <th>N° Proforma</th>
-                <th>Fecha</th>            
+                <th>Fecha</th>
+                <th>Origen</th>            
+                <th>Destino</th>
             </tr>
         </thead>
         <tbody>
             {{#proformas}}
             <tr>
                 <td>{{id_proforma}}</td>
-                <td>{{fecha_proforma}}</td>            
+                <td>{{fecha_proforma}}</td>
+                <td>{{origen_viaje}}</td>
+                <td>{{destino_viaje}}</td>            
             </tr>
             {{/proformas}}
         </tbody>

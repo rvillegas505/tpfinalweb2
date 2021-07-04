@@ -46,7 +46,4 @@ class ProformaModel
                 $this->database->execute($insert);
             }
 */
-
-
-
 }
