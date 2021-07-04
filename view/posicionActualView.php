@@ -24,7 +24,7 @@
         <label for="extras">Extras</label>
         <input type="number" class="form-control" name="extras" id="extras">
     </div>
-    <button type="submit" name="submit" class="btn btn-dark">Registrar posicion</button>
+    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
     </form>
     <div class="container-md">
     <div class="row">
@@ -39,8 +39,6 @@
         <button class="btn btn-danger my-3" onclick="loadMap()">Mostrar Ubicacion</button>
     
 </div>
-
-<a href="/homechofer"><button class="btn btn-dark my-3">Volver a Home</button></a>
 
 {{>footer}}
 
