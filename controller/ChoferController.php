@@ -19,6 +19,16 @@ class ChoferController{
             }
     }
 
+    public function mostrarRegistroPosicion(){
+        if ($_SESSION['usuario'] != null && $_SESSION['rol'] == 'chofer'){
+            $data['usuario'] = $_SESSION['usuario'];
+            echo $this->render->render("view/posicionActualView.php", $data);
+        }
+        else{
+            echo $this->render->render("view/errorView.php");
+        }
+    }
+
     public function procesarPosicionActual(){
         if (isset($_POST['submit'])){
 

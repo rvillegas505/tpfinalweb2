@@ -14,6 +14,7 @@ include_once("model/RegistroModel.php");
 include_once("model/SesionModel.php");
 include_once("model/ProformaModel.php");
 include_once("model/MostrarEnAdminModel.php");
+include_once("model/ChoferModel.php");
 
 include_once("controller/HomeController.php");
 include_once("controller/RegistroController.php");
@@ -70,6 +71,11 @@ class Configuration{
         return new MostrarEnAdminModel($database);
     }
 
+    public function getChoferModel(){
+        $database = $this->getDatabase();
+        return new ChoferModel($database);
+    }
+
     public function getRender(){
         return new Render('view/partial');
     }
@@ -85,7 +91,8 @@ class Configuration{
     }
 
     public function getHomeChoferController(){
-        return new HomeChoferController($this->getRender());
+        $choferModel = $this->getChoferModel();
+        return new HomeChoferController($choferModel, $this->getRender());
     }
 
     public function getRegistroController(){
