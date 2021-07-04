@@ -17,7 +17,7 @@ class MostrarEnChoferModel
         return $this->database->query("SELECT * FROM transportes.empleados;");
     } */
     public function getPrueba(){
-        return "forro";
+        return "prueba1";
     }
 
     public function getUbicacion(){
