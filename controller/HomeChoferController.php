@@ -37,14 +37,13 @@ class HomeChoferController
         if (isset($_POST['submit'])){
 
             $kmRecorridos = $_POST['kilometrosRecorridos'];
-            $proforma = null;
             $combustibleGastado = $_POST['combustibleGastado'];
             $peajes = $_POST['peajes'];
             $gastos = $_POST['extras'];
-            $total = $this->choferModel->calcularTotalDesdePosicionActual($kmRecorridos, $proforma, $combustibleGastado, $peajes, $gastos);
-            $this->choferModel->registrarPosicionActual($kmRecorridos, $proforma, $combustibleGastado, $peajes, $gastos, $total);
+            $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
+            $this->choferModel->registrarPosicionActual($kmRecorridos, $combustibleGastado, $peajes, $gastos, $total);
 
-            echo $this->render->render("view/proformaCargadaView.php");
+            echo $this->render->render("view/posicionCargadaView.php");
 
         }
         else{

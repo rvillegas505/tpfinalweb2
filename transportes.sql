@@ -27,8 +27,6 @@ destino_viaje varchar(50),
 fecha_carga_viaje date,
 tipo_carga varchar(50),
 peso_neto_carga double,
-km_estimado double,
-combustible_estimado double,
 etd_estimado time,
 eta_estimado time,
 viaticos_estimado double,
@@ -56,8 +54,6 @@ tipo_carga varchar(50),
 peso_neto double,
 CONSTRAINT primary key(id_carga));
 
-
-
 create table costeo_real(id_costeo_real int auto_increment,
 id_proforma int, 
 km_real double, 
@@ -75,15 +71,12 @@ CONSTRAINT primary key(id_costeo_real),
 CONSTRAINT fk_id_proforma_costeo_real foreign key(id_proforma) references proforma(id_proforma)); 
 
 create table posicion_actual(id_posicion_actual int auto_increment,
-id_proforma int,
 km_recorridos double,
 combustible_gastado double,
 peajes double,
 extras double,
 total double,
-CONSTRAINT primary key(id_posicion_actual),
-CONSTRAINT fk_id_proforma_posicion_actual foreign key(id_proforma) references proforma(id_proforma));
-
+CONSTRAINT primary key(id_posicion_actual));
 
 /*
 create table proforma(id_proforma int auto_increment,
