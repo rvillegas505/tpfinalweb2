@@ -40,8 +40,8 @@ class HomeChoferController
             $combustibleGastado = $_POST['combustibleGastado'];
             $peajes = $_POST['peajes'];
             $gastos = $_POST['extras'];
-            $longitud = $_POST['longitud'];
-            $latitud = $_POST['latitud'];
+            $longitud = $_POST['longitudinput'];
+            $latitud = $_POST['latitudinput'];
             $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
             $this->mostrarEnChoferModel->registrarPosicionActual($kmRecorridos, $longitud, $latitud, $combustibleGastado, $peajes, $gastos, $total);
             

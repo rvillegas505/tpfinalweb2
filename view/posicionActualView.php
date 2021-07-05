@@ -26,11 +26,11 @@
     </div>
     <div class="form-group">
         <label for="extras">Latitud</label>
-        <input type="number" class="form-control" name="latitudinput" id="latitudinput">
+        <input type="text" class="form-control" name="latitudinput" id="latitudinput">
     </div>
     <div class="form-group">
         <label for="extras">Longitud</label>
-        <input type="number" class="form-control" name="longitudinput" id="longitudinput">
+        <input type="text" class="form-control" name="longitudinput" id="longitudinput">
     </div>
     <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
     </form>
