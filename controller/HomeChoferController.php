@@ -41,11 +41,11 @@ class HomeChoferController
             $combustibleGastado = $_POST['combustibleGastado'];
             $peajes = $_POST['peajes'];
             $gastos = $_POST['extras'];
-            $longitud = $_POST['longitud'];
+            $longitud = $_POST['longitudinput'];
             $latitud = $_POST['latitudinput'];
-            $proforma = $_POST['idProformainput'];
+
             $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
-            $this->mostrarEnChoferModel->registrarPosicionActual($proforma, $longitud, $latitud, $kmRecorridos, $combustibleGastado, $peajes, $gastos, $total);
+            $this->mostrarEnChoferModel->registrarPosicionActual($longitud, $latitud, $kmRecorridos, $combustibleGastado, $peajes, $gastos, $total);
 
             echo $this->render->render("view/posicionCargadaView.php");
             $this->mostrarEnChoferModel->registrarPosicionActual($kmRecorridos, $longitud, $latitud, $combustibleGastado, $peajes, $gastos, $total);

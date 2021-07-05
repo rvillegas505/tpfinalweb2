@@ -71,9 +71,8 @@ CONSTRAINT primary key(id_costeo_real),
 CONSTRAINT fk_id_proforma_costeo_real foreign key(id_proforma) references proforma(id_proforma)); 
 
 create table posicion_actual(id_posicion_actual int auto_increment,
-id_proforma double,
 longitud double,
-latitud int,
+latitud double,
 km_recorridos double,
 combustible_gastado double,
 peajes double,

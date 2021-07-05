@@ -8,10 +8,6 @@
 <div class="container-md my-3 col-md-6">
     <form action="/homeChofer/procesarPosicionActual" method="POST">
     <div class="form-group">
-        <label for="idProforma">ID proforma</label>
-        <input type="number" class="form-control" name="idProforma" id="idProforma">
-    </div>
-    <div class="form-group">
         <label for="kilometrosRecorridos">Kilometros recorridos</label>
         <input type="number" class="form-control" name="kilometrosRecorridos" id="kilometrosRecorridos">
     </div>
@@ -30,11 +26,11 @@
     </div>
     <div class="form-group">
         <label for="extras">Latitud</label>
-        <input type="number" class="form-control" name="latitudinput" id="latitudinput">
+        <input type="text" class="form-control" name="latitudinput" id="latitudinput">
     </div>
     <div class="form-group">
         <label for="extras">Longitud</label>
-        <input type="number" class="form-control" name="longitudinput" id="longitudinput">
+        <input type="text" class="form-control" name="longitudinput" id="longitudinput">
     </div>
     <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
     </form>
