@@ -28,18 +28,25 @@
         <label for="extras">Extras</label>
         <input type="number" class="form-control" name="extras" id="extras">
     </div>
+    <div class="form-group">
+        <label for="extras">Latitud</label>
+        <input type="number" class="form-control" name="latitudinput" id="latitudinput">
+    </div>
+    <div class="form-group">
+        <label for="extras">Longitud</label>
+        <input type="number" class="form-control" name="longitudinput" id="longitudinput">
+    </div>
+    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
+    </form>
+    <div class="container-md">
     <div class="row">
         <h2 class="">Datos del Viaje</h2>
     </div>
     <div class="row">
-        <div class="col-6" id="mapa" style="width:500px; height:400px;"></div>
-        <div class="col-3" id="latitud" name="latitud">latitud <h5 id="latitud" name="latitud"></h5></div>
-        <div class="col-3" id="longitud" name="longitud">longitud <h5 id="longitud" name="longitud"></h5></div>   
-    </div>  
-    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
-    </form>
-    <div class="container-md">
-          
+        <div class="col-12" id="mapa" style="width:500px; height:400px;"></div>
+        <div class="col-6">latitud <h5 id="latitud"></h5></div>
+        <div class="col-6">longitud <h5 id="longitud"></h5></div>   
+    </div>        
         <!-- <a href="/homechofer/mostrarubicacion"><button class="btn btn-dark my-3">Obtener ubicacion</button></a> -->
         <button class="btn btn-danger my-3" onclick="loadMap()">Mostrar Ubicacion</button>
     
@@ -72,6 +79,9 @@
 
                 document.getElementById("latitud").innerHTML = position.coords.latitude;
                 document.getElementById("longitud").innerHTML = position.coords.longitude;
+
+                document.getElementById("latitudinput").value = position.coords.latitude;
+                document.getElementById("longitudinput").value = position.coords.longitude;
 
                 map.setCenter(geolocate);
             });

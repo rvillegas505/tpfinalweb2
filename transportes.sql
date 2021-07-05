@@ -71,8 +71,8 @@ CONSTRAINT primary key(id_costeo_real),
 CONSTRAINT fk_id_proforma_costeo_real foreign key(id_proforma) references proforma(id_proforma)); 
 
 create table posicion_actual(id_posicion_actual int auto_increment,
-id_proforma int,
-longitud int,
+id_proforma double,
+longitud double,
 latitud int,
 km_recorridos double,
 combustible_gastado double,
@@ -83,6 +83,7 @@ CONSTRAINT primary key(id_posicion_actual));
 
 select * from posicion_actual;
 select * from empleados;
+select * from proforma;
 update empleados set rol = 'admin' where dni = 42671687;
 update empleados set rol = 'chofer' where dni = 24184348;
 drop database transportes;
