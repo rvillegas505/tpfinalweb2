@@ -8,6 +8,10 @@
 <div class="container-md my-3 col-md-6">
     <form action="/homeChofer/procesarPosicionActual" method="POST">
     <div class="form-group">
+        <label for="idProforma">ID proforma</label>
+        <input type="number" class="form-control" name="idProforma" id="idProforma">
+    </div>
+    <div class="form-group">
         <label for="kilometrosRecorridos">Kilometros recorridos</label>
         <input type="number" class="form-control" name="kilometrosRecorridos" id="kilometrosRecorridos">
     </div>
@@ -24,17 +28,18 @@
         <label for="extras">Extras</label>
         <input type="number" class="form-control" name="extras" id="extras">
     </div>
-    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
-    </form>
-    <div class="container-md">
     <div class="row">
         <h2 class="">Datos del Viaje</h2>
     </div>
     <div class="row">
         <div class="col-6" id="mapa" style="width:500px; height:400px;"></div>
-        <div class="col-3">latitud <h5 id="latitud"></h5></div>
-        <div class="col-3">longitud <h5 id="longitud"></h5></div>   
-    </div>        
+        <div class="col-3" id="latitud" name="latitud">latitud <h5 id="latitud" name="latitud"></h5></div>
+        <div class="col-3" id="longitud" name="longitud">longitud <h5 id="longitud" name="longitud"></h5></div>   
+    </div>  
+    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
+    </form>
+    <div class="container-md">
+          
         <!-- <a href="/homechofer/mostrarubicacion"><button class="btn btn-dark my-3">Obtener ubicacion</button></a> -->
         <button class="btn btn-danger my-3" onclick="loadMap()">Mostrar Ubicacion</button>
     
