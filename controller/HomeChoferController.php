@@ -44,8 +44,9 @@ class HomeChoferController
             $latitud = $_POST['latitud'];
             $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
             $this->mostrarEnChoferModel->registrarPosicionActual($kmRecorridos, $longitud, $latitud, $combustibleGastado, $peajes, $gastos, $total);
-
-            echo $this->render->render("view/posicionCargadaView.php");
+            
+            $data['usuario'] = $_SESSION['usuario'];
+            echo $this->render->render("view/posicionCargadaView.php", $data);
 
         }
         else{
