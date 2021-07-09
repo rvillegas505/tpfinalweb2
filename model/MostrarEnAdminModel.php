@@ -16,4 +16,10 @@ class MostrarEnAdminModel
     public function getEmpleados(){
         return $this->database->query("SELECT * FROM transportes.empleados;");
     }
+
+    public function bajaEmpleado($dni){
+
+        $query = "DELETE FROM `empleados` WHERE `empleados`.`dni` = '$dni'";
+        $this->database->execute($query);
+    }
 }

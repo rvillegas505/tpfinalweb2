@@ -34,4 +34,12 @@ class HomeAdminController
         $data['usuario'] = $_SESSION['usuario'];
         echo $this->render->render("view/empleadosRegistradosView.php", $data);
     }
+
+    public function bajaEmpleado(){
+        $dni= $_GET['dni'];
+        $this->mostrarEnAdminModel->bajaEmpleado($dni);
+        $data['dni']= $dni;
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/bajaEmpleadoView.php", $data);
+    }
 }
