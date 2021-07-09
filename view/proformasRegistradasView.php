@@ -17,7 +17,10 @@
                 <td>{{id_proforma}}</td>
                 <td>{{fecha_proforma}}</td>
                 <td>{{origen_viaje}}</td>
-                <td>{{destino_viaje}}</td>            
+                <td>{{destino_viaje}}</td>    
+                <form action="bajaproforma/id={{id_proforma}}" method="GET">
+                <td><button class="btn btn-danger">BAJA</button></td> 
+                </form>       
             </tr>
             {{/proformas}}
         </tbody>

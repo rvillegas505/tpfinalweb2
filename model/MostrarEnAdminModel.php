@@ -22,4 +22,11 @@ class MostrarEnAdminModel
         $query = "DELETE FROM `empleados` WHERE `empleados`.`dni` = '$dni'";
         $this->database->execute($query);
     }
+
+    public function bajaProforma($id){
+
+        $query = "DELETE FROM `proforma` WHERE `proforma`.`id_proforma` = '$id' ";
+        $this->database->execute($query);
+
+    }
 }

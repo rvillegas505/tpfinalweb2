@@ -42,4 +42,13 @@ class HomeAdminController
         $data['usuario'] = $_SESSION['usuario'];
         echo $this->render->render("view/bajaEmpleadoView.php", $data);
     }
+
+    public function bajaProforma(){
+        $id = $_GET['id'];
+        $this->mostrarEnAdminModel->bajaProforma($id);
+        $data['id']= $id;
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/bajaProformaView.php", $data);
+
+    }
 }
