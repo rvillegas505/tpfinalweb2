@@ -23,6 +23,12 @@ class MostrarEnAdminModel
         $this->database->execute($query);
     }
 
+    public function rolEmpleado($dni, $rol){
+
+        $query = "UPDATE `empleados` SET `empleados`.`rol` = '$rol' WHERE `empleados`.`dni` = '$dni'";
+        $this->database->execute($query);
+    }
+
     public function bajaProforma($id){
 
         $query = "DELETE FROM `proforma` WHERE `proforma`.`id_proforma` = '$id' ";

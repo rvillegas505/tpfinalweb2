@@ -43,12 +43,21 @@ class HomeAdminController
         echo $this->render->render("view/bajaEmpleadoView.php", $data);
     }
 
+    public function rolEmpleado(){
+        $dni= $_GET['dni'];
+        $rol= $_GET['rol'];
+        $this->mostrarEnAdminModel->rolEmpleado($dni, $rol);
+        $data['dni']= $dni;
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/rolEmpleadoView.php", $data);
+    }
+
     public function bajaProforma(){
         $id = $_GET['id'];
         $this->mostrarEnAdminModel->bajaProforma($id);
         $data['id']= $id;
         $data['usuario'] = $_SESSION['usuario'];
-        echo $this->render->render("view/bajaProformaView.php", $data);
+        echo $this->render->render("view/bajaEmpleadoView.php", $data);
 
     }
 

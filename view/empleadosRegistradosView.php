@@ -18,7 +18,11 @@
                 <td>{{rol}}</td>
                 <form action="bajaempleado/dni={{dni}}" method="GET">
                 <td><button class="btn btn-danger">BAJA</button></td>
-                </form>             
+                </form>
+                <form action="rolempleado/dni={{dni}}" method="GET">
+                    <td><input type="text" name="rol" placeholder="Rol"></button>
+                    <button class="btn btn-warning">CAMBIAR ROL</button></td>
+                </form>
             </tr>
             {{/empleados}}
         </tbody>
