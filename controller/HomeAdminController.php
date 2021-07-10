@@ -51,4 +51,11 @@ class HomeAdminController
         echo $this->render->render("view/bajaProformaView.php", $data);
 
     }
+
+    public function verProforma(){
+        $id = $_GET['id'];
+        $data['proforma']=$this->mostrarEnAdminModel->verProforma($id);
+        $data['usuario']= $_SESSION['usuario'];
+        echo $this->render->render("view/verProformaView.php", $data);
+    }
 }

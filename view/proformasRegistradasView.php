@@ -20,6 +20,9 @@
                 <td>{{destino_viaje}}</td>    
                 <form action="bajaproforma/id={{id_proforma}}" method="GET">
                 <td><button class="btn btn-danger">BAJA</button></td> 
+                </form>   
+                <form action="verproforma/id={{id_proforma}}" method="GET">
+                <td><button class="btn btn-primary">VER</button></td>
                 </form>       
             </tr>
             {{/proformas}}

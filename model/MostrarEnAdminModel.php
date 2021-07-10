@@ -29,4 +29,9 @@ class MostrarEnAdminModel
         $this->database->execute($query);
 
     }
+
+    public function verProforma($id){
+        $query= "SELECT * FROM `proforma` WHERE `proforma`.`id_proforma` = '$id'";
+        return $this->database->query($query);
+    }
 }
