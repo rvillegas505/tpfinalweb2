@@ -9,6 +9,8 @@
                 <th>Fecha</th>
                 <th>Origen</th>            
                 <th>Destino</th>
+                <th><img src="/view/images/xmark.png" style="height: 2rem; width:2rem;"/></th>
+                <th><img src="/view/images/viewdetails.png" style="height: 2rem; width:2rem;"/></th> 
             </tr>
         </thead>
         <tbody>
@@ -17,7 +19,13 @@
                 <td>{{id_proforma}}</td>
                 <td>{{fecha_proforma}}</td>
                 <td>{{origen_viaje}}</td>
-                <td>{{destino_viaje}}</td>            
+                <td>{{destino_viaje}}</td>   
+                <form action="bajaproforma/id={{id_proforma}}" method="GET">
+                <td><button class="btn btn-danger">BAJA</button></td> 
+                </form>   
+                <form action="verproforma/id={{id_proforma}}" method="GET">
+                <td><button class="btn btn-primary">VER</button></td>
+                </form>       
             </tr>
             {{/proformas}}
         </tbody>
