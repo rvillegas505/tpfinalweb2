@@ -20,13 +20,13 @@ cuit_cliente int,
 direccion_cliente varchar(50),
 telefono_cliente long,
 email_cliente varchar(40),
-km_estimado double,
-combustible_estimado double,
 origen_viaje varchar(50),
 destino_viaje varchar(50),
 fecha_carga_viaje date,
 tipo_carga varchar(50),
 peso_neto_carga double,
+km_estimado double,
+combustible_estimado double,
 etd_estimado time,
 eta_estimado time,
 viaticos_estimado double,
@@ -82,6 +82,7 @@ CONSTRAINT primary key(id_posicion_actual));
 
 select * from posicion_actual;
 select * from empleados;
+select * from proforma;
 update empleados set rol = 'admin' where dni = 42671687;
 update empleados set rol = 'chofer' where dni = 24184348;
 drop database transportes;

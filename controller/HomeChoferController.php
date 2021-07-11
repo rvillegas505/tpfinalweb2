@@ -35,6 +35,7 @@ class HomeChoferController
 
     public function procesarPosicionActual(){
         if (isset($_POST['submit'])){
+     
 
             $kmRecorridos = $_POST['kilometrosRecorridos'];
             $combustibleGastado = $_POST['combustibleGastado'];
@@ -42,9 +43,9 @@ class HomeChoferController
             $gastos = $_POST['extras'];
             $longitud = $_POST['longitudinput'];
             $latitud = $_POST['latitudinput'];
+
             $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
-            $this->mostrarEnChoferModel->registrarPosicionActual($kmRecorridos, $longitud, $latitud, $combustibleGastado, $peajes, $gastos, $total);
-            
+            $this->mostrarEnChoferModel->registrarPosicionActual($longitud, $latitud, $kmRecorridos, $combustibleGastado, $peajes, $gastos, $total);
             $data['usuario'] = $_SESSION['usuario'];
             echo $this->render->render("view/posicionCargadaView.php", $data);
 

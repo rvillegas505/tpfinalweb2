@@ -24,8 +24,12 @@ class MostrarEnChoferModel
         return "Latitud"."-"."Longutid";
     }
 
-    public function registrarPosicionActual($km, $longitud, $latitud, $combustible, $peajes, $extras, $total){
-        $insert = "INSERT INTO `posicion_actual` (`id_posicion_actual`, `longitud`, `latitud`, `km_recorridos`, `combustible_gastado`, `peajes`, `extras`, `total`) VALUES (NULL, '$km', '$longitud', '$latitud', '$combustible', '$peajes', '$extras', '$total');";
+    public function registrarPosicionActual($longitud, $latitud, $km, $combustible, $peajes, $extras, $total){
+        $insert = "INSERT INTO `posicion_actual` (`id_posicion_actual`, `longitud`, `latitud`, `km_recorridos`, `combustible_gastado`, `peajes`, `extras`, `total`) VALUES (NULL, '$longitud', '$latitud', '$km', '$combustible', '$peajes', '$extras', '$total');";
         $this->database->execute($insert);
+    }
+
+    public function listaProformas(){
+        return $this->database->query("SELECT id_proforma FROM proforma;");
     }
 }

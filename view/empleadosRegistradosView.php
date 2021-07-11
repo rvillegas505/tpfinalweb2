@@ -1,5 +1,5 @@
 {{>headerLogeado}}
-
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <div class="container-md">
     <h2 class="">Empleados Registrados</h2>
     <table class="table table-hover">
