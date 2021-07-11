@@ -4,7 +4,6 @@
     <div class="row p-5">
         <div class="container-md my-5 border col-sm-4">
             <h2 class="my-3">Proformas</h2>
-            <a href="/proforma"><button class="btn btn-dark my-3">Llenar Proforma</button></a>
             <a href="/homeadmin/verproformas"><button class="btn btn-dark my-3">Proformas Registradas</button></a>
         </div>
 
