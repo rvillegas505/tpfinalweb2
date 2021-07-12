@@ -58,13 +58,15 @@ class HomeAdminController
         $data['dni']= $dni;
         $data['usuario'] = $_SESSION['usuario'];
         
-            if(isset($_GET['disponible'])){
-            $this->mostrarEnAdminModel->cambiarADisponible($dni);
-            echo $this->render->render("view/disponibilidadEmpleadoView.php", $data);    
-            }else{
-                $this->mostrarEnAdminModel->cambiarANoDisponible($dni);
-                echo $this->render->render("view/disponibilidadEmpleadoView.php", $data);
-            } 
+            if(isset($_GET['disponibilidad'])){
+                $disponibilidad = $_GET['disponibilidad'];
+                if($disponibilidad == "disponible"){
+                    $this->mostrarEnAdminModel->cambiarADisponible($dni);
+                }else{
+                    $this->mostrarEnAdminModel->cambiarANoDisponible($dni);  
+                }
+                echo $this->render->render("view/disponibilidadEmpleadoView.php", $data);                 
+            }
             
     }
 

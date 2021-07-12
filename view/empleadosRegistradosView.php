@@ -27,13 +27,13 @@
                 </form>
                 <form action="cambiarDisponibilidadEmpleado/dni={{dni}}" method="GET">
                     <td><div class="form-check">
-                    <input class="form-check-input" type="radio" name="disponible" id="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="disponibilidad" value ="disponible" id="flexRadioDefault1" required>
                     <label class="form-check-label" for="flexRadioDefault1">
                         DISPONIBLE
                     </label>
                     </div>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="noDisponible" id="flexRadioDefault2" >
+                    <input class="form-check-input" type="radio" name="disponibilidad" value ="noDisponible" id="flexRadioDefault2" required>
                     <label class="form-check-label" for="flexRadioDefault2">
                         NO DISPONIBLE
                     </label>
