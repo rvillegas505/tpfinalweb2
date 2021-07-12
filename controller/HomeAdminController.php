@@ -57,7 +57,7 @@ class HomeAdminController
         $this->mostrarEnAdminModel->bajaProforma($id);
         $data['id']= $id;
         $data['usuario'] = $_SESSION['usuario'];
-        echo $this->render->render("view/bajaEmpleadoView.php", $data);
+        echo $this->render->render("view/bajaProformaView.php", $data);
 
     }
 

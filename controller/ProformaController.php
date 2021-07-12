@@ -20,7 +20,7 @@ class ProformaController{
     }
 
     public function procesarProforma(){
-        if (isset($_POST['submit'])){
+        if (isset($_POST['fechaProforma'])){
 
             $fechaProforma=$_POST['fechaProforma'];
             $dniChofer=$_POST['dniChofer'];
@@ -45,7 +45,7 @@ class ProformaController{
             $reeferEstimado = $_POST['reeferEstimado'];
             $feeEstimado = $_POST['feeEstimado'];
             $totalEstimado = $_POST['totalEstimado'];
-            $this->proformaModel->guardarProforma($fechaProforma, $dniChofer, $nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $kilometrosEstimado, $combustibleEstimado, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
+            $this->proformaModel->guardarProforma($fechaProforma, $dniChofer,$nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
 
 
             /*$dniChofer=$_POST['dniChofer'];
