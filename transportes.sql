@@ -9,7 +9,6 @@ fechaNac date,
 email varchar(40),
 pass varchar(20),
 rol varchar(20),
-disponible boolean,
 CONSTRAINT primary key (dni) 
 ); 
 
@@ -52,7 +51,9 @@ extras double,
 total double,
 CONSTRAINT primary key(id_posicion_actual));
 
-select * from empleados;
+alter table empleados add disponible boolean;
+alter table proforma
+drop constraint fk_dni_chofer_proforma;
 
 
 
