@@ -38,7 +38,8 @@ hazard_estimado double,
 reefer_estimado double,
 fee_estimado double,
 total_estimado double,
-CONSTRAINT primary key (id_proforma));
+CONSTRAINT primary key (id_proforma),
+CONSTRAINT fk_dni_chofer_proforma foreign key(dni_chofer) references empleados(dni));
 
 create table posicion_actual(id_posicion_actual int auto_increment,
 longitud double,
@@ -49,11 +50,6 @@ peajes double,
 extras double,
 total double,
 CONSTRAINT primary key(id_posicion_actual));
-
-
-
-
-
 
 
 

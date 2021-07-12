@@ -32,6 +32,7 @@ class ProformaController{
 
             $fechaProforma=$_POST['fechaProforma'];
             $dniChofer=$_POST['dniChofer'];
+            //$chofer = $this->proformaModel->asignarChoferAProforma($dniChofer);
             $nombreCliente = $_POST['nombreCliente'];
             $cuitCliente = $_POST['cuitCliente'];
             $direccionCliente = $_POST['direccionCliente'];
@@ -53,7 +54,7 @@ class ProformaController{
             $reeferEstimado = $_POST['reeferEstimado'];
             $feeEstimado = $_POST['feeEstimado'];
             $totalEstimado = $_POST['totalEstimado'];
-            $this->proformaModel->guardarProforma($fechaProforma, $dniChofer,$nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
+            $this->proformaModel->guardarProforma($fechaProforma, $dniChofer, $nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
 
 
             /*$dniChofer=$_POST['dniChofer'];
