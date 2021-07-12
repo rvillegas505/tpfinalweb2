@@ -12,6 +12,7 @@
                 <th>Destino</th>
                 <th><img src="/view/images/xmark.png" style="height: 2rem; width:2rem;"/></th>
                 <th><img src="/view/images/viewdetails.png" style="height: 2rem; width:2rem;"/></th> 
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +27,10 @@
                 </form>   
                 <form action="verproforma/id={{id_proforma}}" method="GET">
                 <td><button class="btn btn-primary">VER</button></td>
-                </form>       
+                </form>    
+                <form action="vereditarproforma/id={{id_proforma}}" method="GET">
+                <td><button class="btn btn-primary">EDITAR</button></td>
+                </form>     
             </tr>
             {{/proformas}}
         </tbody>

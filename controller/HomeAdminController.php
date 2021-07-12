@@ -67,4 +67,50 @@ class HomeAdminController
         $data['usuario']= $_SESSION['usuario'];
         echo $this->render->render("view/verProformaView.php", $data);
     }
+
+    public function verEditarProforma(){
+        $id = $_GET['id'];
+        $data['proforma']=$this->mostrarEnAdminModel->verProforma($id);
+        $data['usuario']= $_SESSION['usuario'];
+        echo $this->render->render("view/editarProformaView.php", $data);
+    }
+
+    public function editarProforma(){
+        
+        if (isset($_POST['fechaProforma'])){
+            $id = $_POST['id'];
+            $fechaProforma=$_POST['fechaProforma'];
+            $dniChofer=$_POST['dniChofer'];
+            $nombreCliente = $_POST['nombreCliente'];
+            $cuitCliente = $_POST['cuitCliente'];
+            $direccionCliente = $_POST['direccionCliente'];
+            $clienteTelefono = $_POST['telefonoCliente'];
+            $emailCliente = $_POST['emailCliente'];
+            $origenViaje = $_POST['origenViaje'];
+            $destinoViaje = $_POST['destinoViaje'];
+            $fechaCarga = $_POST['fechaCarga'];
+            $tipoCarga=$_POST['tipoCarga'];
+            $pesoNeto = $_POST['pesoNeto'];
+            $kilometrosEstimado=$_POST['kilometrosEstimado'];
+            $combustibleEstimado = $_POST['combustibleEstimado'];
+            $etdCosteoEstimado = $_POST['etdCosteoEstimado'];
+            $etaCosteoEstimado = $_POST['etaCosteoEstimado'];
+            $viaticosEstimado = $_POST['viaticosEstimado'];
+            $peajesPesajesEstimado = $_POST['peajesPesajesEstimado'];
+            $extrasEstimado = $_POST['extrasEstimado'];
+            $hazardEstimado = $_POST['hazardEstimado'];
+            $reeferEstimado = $_POST['reeferEstimado'];
+            $feeEstimado = $_POST['feeEstimado'];
+            $totalEstimado = $_POST['totalEstimado'];
+            $this->mostrarEnAdminModel->editProforma($id, $fechaProforma, $dniChofer,$nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
+
+            $data['usuario'] = $_SESSION['usuario'];
+            echo $this->render->render("view/proformaCargadaView.php");
+
+        }
+        else{
+            echo "error";
+        }
+    
+    }
 }
