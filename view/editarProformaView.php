@@ -13,7 +13,7 @@
 <div class="container-md my-3 col-md-6">
 <form action="/homeadmin/editarproforma" class="row g-3 needs-validation" method="POST" novalidate>
 {{#proforma}}
-    <div class="col-md-12">
+    <div hidden class="col-md-12">
         <label for="validation">id proforma</label>
         <input type="number" class="form-control" name="id" id="validation" value="{{id_proforma}}" required>
         <label for="validation">Fecha</label>
