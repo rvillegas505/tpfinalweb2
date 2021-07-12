@@ -40,4 +40,14 @@ class MostrarEnAdminModel
         $query= "SELECT * FROM `proforma` WHERE `proforma`.`id_proforma` = '$id'";
         return $this->database->query($query);
     }
+
+    public function cambiarADisponible($dni){
+        $query = "UPDATE `empleados` SET `empleados`.`disponible` = TRUE WHERE `empleados`.`dni` = '$dni';";
+        $this->database->execute($query);
+    }
+
+    public function cambiarANoDisponible($dni){
+        $query = "UPDATE `empleados` SET `empleados`.`disponible` = FALSE WHERE `empleados`.`dni` = '$dni';";
+        $this->database->execute($query);
+    }
 }

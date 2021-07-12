@@ -12,11 +12,19 @@ class ProformaController{
     public function execute(){
             if ($_SESSION['usuario'] != null){
                 $data['usuario'] = $_SESSION['usuario'];
+                $data['empleados'] = $this->proformaModel->verChoferesDisponibles();
                 echo $this->render->render("view/proformaView.php", $data);
             }
             else{
                 echo $this->render->render("view/errorView.php");
             }
+    }
+
+    
+    public function verChoferesDisponibles(){
+        $data['empleados'] = $this->proformaModel->verChoferesDisponibles();
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/proformaView.php", $data);
     }
 
     public function procesarProforma(){

@@ -205,9 +205,30 @@
     <hr class="bg-dark d-block py-1">
     <h4 class="my-3">Personal</h4>
 
-    <div class="form-group">
-        <label for="dniChofer">Chofer</label>
-        <input type="number" class="form-control" name="dniChofer" id="dniChofer" placeholder="DNI" required>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Dni</th>
+                <th></th>           
+            </tr>
+        </thead>
+        <tbody>
+            {{#empleados}}
+            <tr>
+                <td>{{nombreApellido}}</td>
+                <td>{{dni}}</td>
+                <td><div class="form-check">
+                    <input class="form-check-input" type="radio" name="dniChofer" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Asignar
+                    </label>
+                    </div>
+                </td>
+            </tr>
+            {{/empleados}}
+        </tbody>
+    </table>
         <div class="invalid-feedback">
             Ingrese DNI del chofer.
         </div>
