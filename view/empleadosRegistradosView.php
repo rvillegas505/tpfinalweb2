@@ -1,14 +1,18 @@
 {{>headerLogeado}}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <div class="container-md">
-    <h2 class="">Empleados Registrados</h2>
+    <h2>Empleados Registrados</h2>
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
                 <th>Nombre</th>
                 <th>Dni</th> 
                 <th>Rol</th>
-                <th>Disponible</th>            
+                <th>Disponible</th> 
+                <th>Baja</th> 
+                <th>Cambiar Rol</th>      
+                <th>Cambiar disponibilidad</th>  
+                <th><h5 class="text-dark">.</h5></th> 
             </tr>
         </thead>
         <tbody>
@@ -17,7 +21,7 @@
                 <td>{{nombreApellido}}</td>
                 <td>{{dni}}</td>
                 <td>{{rol}}</td>
-                <td>{{disponible}}</td>
+                <td><h5 id="disponible" class="disponibilidad">{{disponible}}</h5></td>
                 <form action="bajaempleado/dni={{dni}}" method="GET">
                 <td><button class="btn btn-danger">BAJA</button></td>
                 </form>
@@ -48,6 +52,25 @@
     </table>
 </div>
 
+<script>
+    //document.getElementById("disponible").innerHTML='hola';
+
+
+    if (document.getElementsByClassName("disponibilidad").innerText == '1' ){
+        document.getElementsByClassName("disponibilidad").innerText='disponible';
+    }
+    else{
+        document.getElementsByClassName("disponibilidad").innerText='no disponible';
+    }
+
+    // if (document.getElementById("disponible").innerText=='1'){
+    //     document.getElementById("disponible").innerText='Disponible';
+    //     console.log('disponible');
+    // }
+    // else{
+    //     document.getElementById("disponible").innerText='No disponible'
+    // }
+</script>
 
 <a href="/homeadmin"><button class="btn btn-dark my-3">Volver a Home</button></a>
 
