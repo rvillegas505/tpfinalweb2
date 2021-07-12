@@ -89,6 +89,14 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <label for="origenViaje">Patente del camión</label>
+        <input type="text" class="form-control" name="patenteCamion" id="patenteCamion" required>
+        <div class="invalid-feedback">
+            Ingrese Patente del camion.
+        </div>
+    </div>
+
     <!--SECCION CARGA-->
     <hr class="bg-dark d-block py-1">
     <h4 class="my-3">Carga</h4>

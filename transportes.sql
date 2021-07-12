@@ -25,6 +25,7 @@ email_cliente varchar(40),
 origen_viaje varchar(50),
 destino_viaje varchar(50),
 fecha_carga_viaje date,
+camion_patente varchar(50),
 tipo_carga varchar(50),
 peso_neto_carga double,
 km_estimado double,
@@ -38,8 +39,7 @@ hazard_estimado double,
 reefer_estimado double,
 fee_estimado double,
 total_estimado double,
-CONSTRAINT primary key (id_proforma),
-CONSTRAINT fk_dni_chofer_proforma foreign key(dni_chofer) references empleados(dni));
+CONSTRAINT primary key (id_proforma));
 
 create table posicion_actual(id_posicion_actual int auto_increment,
 longitud double,
