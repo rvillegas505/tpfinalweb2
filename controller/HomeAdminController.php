@@ -23,6 +23,7 @@ class HomeAdminController
         
     }
 
+
     public function verProformas(){
         $data['proformas'] = $this->mostrarEnAdminModel->getProformas();
         $data['usuario'] = $_SESSION['usuario'];
@@ -50,6 +51,23 @@ class HomeAdminController
         $data['dni']= $dni;
         $data['usuario'] = $_SESSION['usuario'];
         echo $this->render->render("view/rolEmpleadoView.php", $data);
+    }
+
+    public function cambiarDisponibilidadEmpleado(){
+        $dni= $_GET['dni'];
+        $data['dni']= $dni;
+        $data['usuario'] = $_SESSION['usuario'];
+        
+            if(isset($_GET['disponibilidad'])){
+                $disponibilidad = $_GET['disponibilidad'];
+                if($disponibilidad == "disponible"){
+                    $this->mostrarEnAdminModel->cambiarADisponible($dni);
+                }else{
+                    $this->mostrarEnAdminModel->cambiarANoDisponible($dni);  
+                }
+                echo $this->render->render("view/disponibilidadEmpleadoView.php", $data);                 
+            }
+            
     }
 
     public function bajaProforma(){

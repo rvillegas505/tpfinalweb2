@@ -11,7 +11,7 @@
 </div>
 
 <div class="container-md my-3 col-md-6">
-<form action="/proforma/procesarProforma" class="row g-3 needs-validation" method="POST" novalidate>
+<form action="/proforma/procesarProforma/dni={{dni}}" class="row g-3 needs-validation" method="POST" novalidate>
 
     <div class="col-md-12">
         <label for="validation">Fecha</label>
@@ -204,7 +204,6 @@
 
     <hr class="bg-dark d-block py-1">
     <h4 class="my-3">Personal</h4>
-
     <div class="form-group">
         <label for="dniChofer">Chofer</label>
         <input type="number" class="form-control" name="dniChofer" id="dniChofer" placeholder="DNI" required>
@@ -212,6 +211,35 @@
             Ingrese DNI del chofer.
         </div>
     </div>
+    <!--<table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Dni</th>
+                <th></th>           
+            </tr>
+        </thead>
+        <tbody>
+            {{#empleados}}
+            <tr>
+                <td>{{nombreApellido}}</td>
+                <td>{{dni}}</td>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="dniChofer" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        ASIGNAR
+                    </label>
+                    </div>
+                    </td>
+            </tr>
+            {{/empleados}}
+        </tbody>
+    </table>
+        <div class="invalid-feedback">
+            Ingrese DNI del chofer.
+        </div>
+    </div>-->
 
     <div class="container d-flex justify-content-center">
     <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>

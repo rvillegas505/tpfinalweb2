@@ -38,7 +38,8 @@ hazard_estimado double,
 reefer_estimado double,
 fee_estimado double,
 total_estimado double,
-CONSTRAINT primary key (id_proforma));
+CONSTRAINT primary key (id_proforma),
+CONSTRAINT fk_dni_chofer_proforma foreign key(dni_chofer) references empleados(dni));
 
 create table posicion_actual(id_posicion_actual int auto_increment,
 longitud double,
@@ -50,12 +51,9 @@ extras double,
 total double,
 CONSTRAINT primary key(id_posicion_actual));
 
-
-
-
-
-
-
+alter table empleados add disponible boolean;
+alter table proforma
+drop constraint fk_dni_chofer_proforma;
 
 
 
@@ -112,7 +110,8 @@ hazard_estimado double,
 reefer_estimado double,
 fee_estimado double,
 total_estimado double,
-CONSTRAINT primary key (id_proforma));
+CONSTRAINT primary key (id_proforma),
+CONSTRAINT fk_id_chofer_proforma foreign key(dni_chofer) references empleados(dni));
  
  create table viaje(id_viaje int auto_increment,
  id_proforma int,

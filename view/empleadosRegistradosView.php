@@ -7,7 +7,8 @@
             <tr>
                 <th>Nombre</th>
                 <th>Dni</th> 
-                <th>Rol</th>            
+                <th>Rol</th>
+                <th>Disponible</th>            
             </tr>
         </thead>
         <tbody>
@@ -16,12 +17,30 @@
                 <td>{{nombreApellido}}</td>
                 <td>{{dni}}</td>
                 <td>{{rol}}</td>
+                <td>{{disponible}}</td>
                 <form action="bajaempleado/dni={{dni}}" method="GET">
                 <td><button class="btn btn-danger">BAJA</button></td>
                 </form>
                 <form action="rolempleado/dni={{dni}}" method="GET">
                     <td><input type="text" name="rol" placeholder="Rol"></button>
                     <button class="btn btn-warning">CAMBIAR ROL</button></td>
+                </form>
+                <form action="cambiarDisponibilidadEmpleado/dni={{dni}}" method="GET">
+                    <td><div class="form-check">
+                    <input class="form-check-input" type="radio" name="disponibilidad" value ="disponible" id="flexRadioDefault1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        DISPONIBLE
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="disponibilidad" value ="noDisponible" id="flexRadioDefault2" required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        NO DISPONIBLE
+                    </label>
+                    </div></td>
+                    <td>
+                        <button type="submit">Actulizar</button>
+                    </td>
                 </form>
             </tr>
             {{/empleados}}
