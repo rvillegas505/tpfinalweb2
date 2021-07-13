@@ -43,7 +43,7 @@
                     </label>
                     </div></td>
                     <td>
-                        <button type="submit">Actulizar</button>
+                        <button type="submit" class="btn btn-primary">Actualizar</button>
                     </td>
                 </form>
             </tr>
