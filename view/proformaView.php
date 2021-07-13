@@ -210,15 +210,13 @@
 
     <!--SECCION Personal-->
 
-    <!--<hr class="bg-dark d-block py-1">
+    <hr class="bg-dark d-block py-1">
     <h4 class="my-3">Personal</h4>
-    <div class="form-group">
+    
         <label for="dniChofer">Chofer</label>
-        <input type="number" class="form-control" name="dniChofer" id="dniChofer" placeholder="DNI" required>
-        <div class="invalid-feedback">
-            Ingrese DNI del chofer.
-        </div>
-    </div>-->
+        
+       
+  
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
@@ -234,12 +232,15 @@
                 <td>{{dni}}</td>
                 <td>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="dniChofer" value ="{{dni}}" id="dniChofer">
+                    <input class="form-check-input" type="radio" name="dniChofer" value ="{{dni}}" id="dniChofer" required>
                     <label class="form-check-label" for="flexRadioDefault1">
                         ASIGNAR
                     </label>
+                    <div class="invalid-feedback">
+                        Asigne un chofer.
                     </div>
-                    </td>
+                </div>
+                </td>
             </tr>
             {{/empleados}}
         </tbody>
@@ -248,7 +249,7 @@
             Ingrese DNI del chofer.
         </div>
     </div>
-
+    
     <div class="container d-flex justify-content-center">
     <button type="submit" name="submit" class="btn btn-dark">Registrar proforma</button>
     </div>
