@@ -41,6 +41,16 @@ class MostrarEnAdminModel
         return $this->database->query($query);
     }
 
+    public function cambiarADisponible($dni){
+        $query = "UPDATE `empleados` SET `empleados`.`disponible` = TRUE WHERE `empleados`.`dni` = '$dni';";
+        $this->database->execute($query);
+    }
+
+    public function cambiarANoDisponible($dni){
+        $query = "UPDATE `empleados` SET `empleados`.`disponible` = FALSE WHERE `empleados`.`dni` = '$dni';";
+        $this->database->execute($query);
+    }
+
     public function editProforma($id, $fechaProforma, $dniChofer, $nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado){
 
         $query = "UPDATE `proforma` SET `proforma`.`fecha_proforma` = '$fechaProforma', `proforma`.`dni_chofer`= '$dniChofer', `proforma`.`nombre_cliente` = '$nombreCliente' , `proforma`.`cuit_cliente` = '$cuitCliente' ,
