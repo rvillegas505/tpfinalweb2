@@ -32,7 +32,6 @@ class ProformaController{
 
             $fechaProforma=$_POST['fechaProforma'];
             $dniChofer=$_POST['dniChofer'];
-            //$chofer = $this->proformaModel->asignarChoferAProforma($dniChofer);
             $nombreCliente = $_POST['nombreCliente'];
             $cuitCliente = $_POST['cuitCliente'];
             $direccionCliente = $_POST['direccionCliente'];
