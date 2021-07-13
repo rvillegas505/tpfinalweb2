@@ -53,23 +53,17 @@
 </div>
 
 <script>
-    //document.getElementById("disponible").innerHTML='hola';
-
-
-    if (document.getElementsByClassName("disponibilidad").innerText == '1' ){
-        document.getElementsByClassName("disponibilidad").innerText='disponible';
+    let disp = document.getElementsByClassName("disponibilidad");
+    
+    for (let x=0; x<disp.length;x++){
+        if(disp[x].innerHTML=='1'){
+            disp[x].innerHTML= "disponible";
+        }
+        else{
+            disp[x].innerHTML= "no disponible"; 
+        }
     }
-    else{
-        document.getElementsByClassName("disponibilidad").innerText='no disponible';
-    }
 
-    // if (document.getElementById("disponible").innerText=='1'){
-    //     document.getElementById("disponible").innerText='Disponible';
-    //     console.log('disponible');
-    // }
-    // else{
-    //     document.getElementById("disponible").innerText='No disponible'
-    // }
 </script>
 
 <a href="/homeadmin"><button class="btn btn-dark my-3">Volver a Home</button></a>
