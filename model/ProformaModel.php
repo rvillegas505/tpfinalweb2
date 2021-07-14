@@ -19,9 +19,6 @@ class ProformaModel
         return $this->database->query($query);
     }
 
-    public function asignarChoferAProforma($dni){
-        $query = "UPDATE `proforma` SET `proforma`.`dni_chofer` = '$dni';";
-    }
     /*
         public function guardarClienteProforma($cuit, $id_proforma, $direccion, $telefono, $email){
             $insert = "INSERT INTO `cliente` (`cuit`, `id_proforma`, `direccion`, `telefono`, `email`) VALUES ('$cuit', '$id_proforma', '$direccion', '$telefono', '$email');";

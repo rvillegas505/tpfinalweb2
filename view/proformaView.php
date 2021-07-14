@@ -11,7 +11,7 @@
 </div>
 
 <div class="container-md my-3 col-md-6">
-<form action="/proforma/procesarProforma/dni={{dni}}" class="row g-3 needs-validation" method="POST" novalidate>
+<form action="/proforma/procesarProforma" class="row g-3 needs-validation" method="POST" novalidate>
 
     <div class="col-md-12">
         <label for="validation">Fecha</label>
@@ -210,7 +210,7 @@
 
     <!--SECCION Personal-->
 
-    <hr class="bg-dark d-block py-1">
+    <!--<hr class="bg-dark d-block py-1">
     <h4 class="my-3">Personal</h4>
     <div class="form-group">
         <label for="dniChofer">Chofer</label>
@@ -218,8 +218,8 @@
         <div class="invalid-feedback">
             Ingrese DNI del chofer.
         </div>
-    </div>
-    <!--<table class="table table-hover">
+    </div>-->
+    <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
                 <th>Nombre</th>
@@ -234,7 +234,7 @@
                 <td>{{dni}}</td>
                 <td>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="dniChofer" id="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="dniChofer" value ="{{dni}}" id="dniChofer">
                     <label class="form-check-label" for="flexRadioDefault1">
                         ASIGNAR
                     </label>
@@ -247,16 +247,14 @@
         <div class="invalid-feedback">
             Ingrese DNI del chofer.
         </div>
-    </div>-->
+    </div>
 
     <div class="container d-flex justify-content-center">
-    <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
+    <button type="submit" name="submit" class="btn btn-dark">Registrar proforma</button>
     </div>
 
 </form>
 </div>
-
-
 
 <script src="../functions.js"></script>
 <!--
