@@ -38,6 +38,10 @@
 
     <h4 class="my-3"> Total: ${{total_estimado}} </h4>
 
+    <form action="../printpdf/id={{id_proforma}}" method="GET">
+    <button>Imprimir</button>
+    </form>
+
     {{/proforma}}
     </div>
     </div>
