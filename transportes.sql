@@ -53,6 +53,8 @@ CONSTRAINT primary key(id_posicion_actual));
 
 alter table empleados add disponible boolean;
 
+alter table posicion_actual add pos_final boolean;
+
 
 
 
