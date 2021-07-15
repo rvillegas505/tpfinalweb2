@@ -54,7 +54,7 @@ CONSTRAINT primary key(id_posicion_actual));
 alter table empleados add disponible boolean;
 
 
-
+select * from proforma;
 
 
 
