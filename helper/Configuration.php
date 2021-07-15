@@ -13,6 +13,8 @@ include_once("controller/QuieroSerParteController.php");
 include_once("model/RegistroModel.php");
 include_once("model/SesionModel.php");
 include_once("model/ProformaModel.php");
+include_once("model/TractorModel.php");
+include_once("model/ArrastradoModel.php");
 include_once("model/MostrarEnAdminModel.php");
 include_once("model/MostrarEnChoferModel.php");
 
@@ -22,6 +24,8 @@ include_once("controller/RegistroController.php");
 include_once("controller/SesionController.php");
 include_once("controller/HomeAdminController.php");
 include_once("controller/ProformaController.php");
+include_once("controller/TractorController.php");
+include_once("controller/ArrastradoController.php");
 include_once("controller/HomeChoferController.php");
 
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
@@ -67,6 +71,16 @@ class Configuration{
         return new ProformaModel($database);
     }
 
+    public function getTractorModel(){
+        $database = $this->getDatabase();
+        return new TractorModel($database);
+    }
+
+    public function getArrastradoModel(){
+        $database = $this->getDatabase();
+        return new ArrastradoModel($database);
+    }
+
     public function getMostrarEnAdminModel(){
         $database = $this->getDatabase();
         return new MostrarEnAdminModel($database);
@@ -109,6 +123,16 @@ class Configuration{
     public function getProformaController(){
         $proformaModel = $this->getProformaModel();
         return new ProformaController($proformaModel, $this->getRender());
+    }
+
+    public function getTractorController(){
+        $tractorModel = $this->getTractorModel();
+        return new TractorController($tractorModel, $this->getRender());
+    }
+
+    public function getArrastradoController(){
+        $arrastradoModel = $this->getArrastradoModel();
+        return new ArrastradoController($arrastradoModel, $this->getRender());
     }
 
     public function getTourController(){

@@ -21,13 +21,49 @@ class MostrarEnAdminModel
         return $this->database->query("SELECT tractor_marca,tractor_modelo,tractor_patente,tractor_motor,tractor_chasis FROM transportes.tractor;");
     }
 
+    public function bajaTractor($patente){
+
+        $query = "DELETE FROM `tractor` WHERE `tractor`.`tractor_patente` = '$patente'";
+        $this->database->execute($query);
+    }
+
+    public function verTractores($patente){
+        $query= "SELECT * FROM `tractor` WHERE `tractor`.`tractor_patente` = '$patente'";
+        return $this->database->query($query);
+    }
+
+    public function editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis) {
+
+        $query = "UPDATE `tractor` SET `tractor`.`tractor_marca` = '$tractor_marca', `tractor`.`tractor_modelo`= '$tractor_modelo', `tractor`.`tractor_patente` = '$tractor_patente' , `tractor`.`tractor_motor` = '$tractor_motor' ,
+        `tractor`.`tractor_chasis` = '$tractor_chasis' WHERE `tractor`.`tractor_patente` = '$tractor_patente'";
+        $this->database->execute($query);
+    }
+
     public function getArrastrados(){
         return $this->database->query("SELECT arrastrado_tipo,arrastrado_patente,arrastrado_chasis FROM transportes.arrastrado;");
+    }
+
+    public function bajaArrastrado($patente){
+
+        $query = "DELETE FROM `arrastrado` WHERE `arrastrado`.`arrastrado_patente` = '$patente'";
+        $this->database->execute($query);
     }
 
     public function bajaEmpleado($dni){
 
         $query = "DELETE FROM `empleados` WHERE `empleados`.`dni` = '$dni'";
+        $this->database->execute($query);
+    }
+
+    public function verArrastrados($patente){
+        $query= "SELECT * FROM `arrastrado` WHERE `arrastrado`.`arrastrado_patente` = '$patente'";
+        return $this->database->query($query);
+    }
+
+    public function editArrastrado($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis) {
+
+        $query = "UPDATE `tractor` SET `tractor`.`tractor_marca` = '$tractor_marca', `tractor`.`tractor_modelo`= '$tractor_modelo', `tractor`.`tractor_patente` = '$tractor_patente' , `tractor`.`tractor_motor` = '$tractor_motor' ,
+        `tractor`.`tractor_chasis` = '$tractor_chasis' WHERE `tractor`.`tractor_patente` = '$tractor_patente'";
         $this->database->execute($query);
     }
 
