@@ -17,6 +17,14 @@ class MostrarEnAdminModel
         return $this->database->query("SELECT * FROM transportes.empleados;");
     }
 
+    public function getTractores(){
+        return $this->database->query("SELECT tractor_marca,tractor_modelo,tractor_patente,tractor_motor,tractor_chasis FROM transportes.tractor;");
+    }
+
+    public function getArrastrados(){
+        return $this->database->query("SELECT arrastrado_tipo,arrastrado_patente,arrastrado_chasis FROM transportes.arrastrado;");
+    }
+
     public function bajaEmpleado($dni){
 
         $query = "DELETE FROM `empleados` WHERE `empleados`.`dni` = '$dni'";

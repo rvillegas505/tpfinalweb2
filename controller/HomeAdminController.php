@@ -131,6 +131,16 @@ class HomeAdminController
     
     }
 
+    public function verTractores(){
+        $data['tractor'] = $this->mostrarEnAdminModel->getTractores();
+        echo $this->render->render("view/tractoresRegistradosView.php", $data);
+    }
+
+    public function verArrastrados(){
+        $data['arrastrado'] = $this->mostrarEnAdminModel->getArrastrados();
+        echo $this->render->render("view/arrastradosRegistradosView.php", $data);
+    }
+
     public function printPdf(){
         
         include_once('helper/DomPdf.php');
