@@ -9,30 +9,38 @@
     <form action="/homeChofer/procesarPosicionActual" method="POST">
     <div class="form-group">
         <label for="kilometrosRecorridos">Kilometros recorridos</label>
-        <input type="number" class="form-control" name="kilometrosRecorridos" id="kilometrosRecorridos">
+        <input type="number" class="form-control" name="kilometrosRecorridos" id="kilometrosRecorridos" required>
     </div>
     <hr class="bg-dark d-block py-1">
     <div class="form-group">
         <label for="combustibleGastado">Combustible gastado</label>
-        <input type="number" class="form-control" name="combustibleGastado" id="combustibleGastado">
+        <input type="number" class="form-control" name="combustibleGastado" id="combustibleGastado" required>
     </div>
     <div class="form-group">
         <label for="peajes">Peajes</label>
-        <input type="number" class="form-control" name="peajes" id="peajes">
+        <input type="number" class="form-control" name="peajes" id="peajes" required>
     </div>
     <div class="form-group">
         <label for="extras">Extras</label>
-        <input type="number" class="form-control" name="extras" id="extras">
+        <input type="number" class="form-control" name="extras" id="extras" required>
     </div>
     <div class="form-group">
         <label for="extras">Latitud</label>
-        <input type="text" class="form-control" name="latitudinput" id="latitudinput">
+        <input type="text" class="form-control" name="latitudinput" id="latitudinput" required>
     </div>
     <div class="form-group">
         <label for="extras">Longitud</label>
-        <input type="text" class="form-control" name="longitudinput" id="longitudinput">
+        <input type="text" class="form-control" name="longitudinput" id="longitudinput" required>
     </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="ubifinal" name="ubifinal" value="1">
+        <label class="form-check-label" for="ubifinal">Ubicacion Final?</label>
+    </div>
+    
     <button type="submit" name="submit" class="btn btn-dark">Registrar Proforma</button>
+    
+       
     </form>
     <div class="container-md">
     <div class="row">
@@ -44,7 +52,7 @@
         <div class="col-6">longitud <h5 id="longitud"></h5></div>   
     </div>        
         <!-- <a href="/homechofer/mostrarubicacion"><button class="btn btn-dark my-3">Obtener ubicacion</button></a> -->
-        <button class="btn btn-danger my-3" onclick="loadMap()">Mostrar Ubicacion</button>
+    <button class="btn btn-danger my-3" onclick="loadMap()">Mostrar Ubicacion</button>
     
 </div>
 

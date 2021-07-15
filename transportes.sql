@@ -53,6 +53,9 @@ CONSTRAINT primary key(id_posicion_actual));
 
 alter table empleados add disponible boolean;
 
+alter table posicion_actual add pos_final boolean;
+
+
 CREATE TABLE `tractor` (
                            `tractor_marca` varchar(20) NOT NULL,
                            `tractor_modelo` varchar(20) NOT NULL,
