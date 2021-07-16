@@ -1,6 +1,6 @@
 {{>headerLogeado}}
 
 <h1>Proforma cargada correctamente</h1>
-<a href="/homeAdmin">Volver</a>
+<a button class="btn btn-dark my-3" href="/homeAdmin">Volver</a>
 
 {{>footer}}

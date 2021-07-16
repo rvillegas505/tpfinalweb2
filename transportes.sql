@@ -24,7 +24,7 @@ email_cliente varchar(40),
 origen_viaje varchar(50),
 destino_viaje varchar(50),
 fecha_carga_viaje date,
-camion_patente varchar(50),
+camion_patente varchar(7),
 tipo_carga varchar(50),
 peso_neto_carga double,
 km_estimado double,
@@ -55,16 +55,17 @@ alter table empleados add disponible boolean;
 
 alter table posicion_actual add pos_final boolean;
 
+select * from proforma;
 
-CREATE TABLE `tractor` (
-                           `tractor_marca` varchar(20) NOT NULL,
-                           `tractor_modelo` varchar(20) NOT NULL,
-                           `tractor_patente` varchar(7) NOT NULL PRIMARY KEY,
-                           `tractor_motor` varchar(10) NOT NULL,
-                           `tractor_chasis` varchar(10) NOT NULL
+CREATE TABLE tractor (
+                           tractor_marca varchar(20) NOT NULL,
+                           tractor_modelo varchar(20) NOT NULL,
+                           tractor_patente varchar(7) NOT NULL PRIMARY KEY,
+                           tractor_motor varchar(10) NOT NULL,
+                           tractor_chasis varchar(10) NOT NULL
 );
 
-INSERT INTO `tractor` (`tractor_marca`, `tractor_modelo`, `tractor_patente`, `tractor_motor`, `tractor_chasis`) VALUES
+INSERT INTO tractor (tractor_marca, tractor_modelo, tractor_patente, tractor_motor, tractor_chasis) VALUES
 ('IVECO', 'Cursor', 'AA123CD', '53879558', 'L53879558'),
 ('IVECO', 'Cursor', 'AA124DC', '69904367', 'R69904367'),
 ('IVECO', 'Cursor', 'AD200XS', '57193968', 'R57193968'),
@@ -94,13 +95,13 @@ INSERT INTO `tractor` (`tractor_marca`, `tractor_modelo`, `tractor_patente`, `tr
 ('M.BENZ', 'Actros 1846', 'AC989QW', '64092078', 'F64092078');
 
 
-CREATE TABLE `arrastrado` (
-                              `arrastrado_tipo` varchar(10) NOT NULL,
-                              `arrastrado_patente` varchar(7) NOT NULL PRIMARY KEY,
-                              `arrastrado_chasis` varchar(10) NOT NULL
+CREATE TABLE arrastrado (
+                              arrastrado_tipo varchar(10) NOT NULL,
+                              arrastrado_patente varchar(7) NOT NULL PRIMARY KEY,
+                              arrastrado_chasis varchar(10) NOT NULL
 );
 
-INSERT INTO `arrastrado` (`arrastrado_tipo`, `arrastrado_patente`, `arrastrado_chasis`) VALUES
+INSERT INTO arrastrado (arrastrado_tipo, arrastrado_patente, arrastrado_chasis) VALUES
 ('Araña', 'AA100AS', '585822'),
 ('Araña', 'AC125AD', '605737'),
 ('Araña', 'AB135AG', '705687'),
@@ -152,7 +153,8 @@ INSERT INTO `arrastrado` (`arrastrado_tipo`, `arrastrado_patente`, `arrastrado_c
 ('CarCarrier', 'AD104WE', '732880'),
 ('CarCarrier', 'AD105ZP', '733355');
 
-
+alter table tractor add patente_arrastrado varchar(7), add constraint fk_patente_arrastre_tractor foreign key(patente_arrastrado) references arrastrado(arrastrado_patente);
+alter table proforma add constraint fk_patente_tractor_proforma foreign key(camion_patente) references tractor(tractor_patente);
 
 
 

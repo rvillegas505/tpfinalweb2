@@ -48,7 +48,38 @@
                 Ingrese chasis del tractor.
             </div>
         </div>
-
+        <label for="arrastrado">Arrastre</label>
+        <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Patente</th>
+                <th>Tipo</th>
+                <th>Chasis</th>
+                <th></th>           
+            </tr>
+        </thead>
+        <tbody>
+            {{#arrastrado}}
+            <tr>
+                <td>{{arrastrado_patente}}</td>
+                <td>{{arrastrado_tipo}}</td>
+                <td>{{arrastrado_chasis}}</td>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="patenteArrastrado" value ="{{arrastrado_patente}}" id="patenteArrastrado" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        ASIGNAR
+                    </label>
+                    <div class="invalid-feedback">
+                        Asigne un arrastre.
+                    </div>
+                </div>
+                </td>
+            </tr>
+            {{/arrastrado}}
+        </tbody>
+    </table>
+    </div>
         <div class="container d-flex justify-content-center">
             <button type="submit" name="submit" class="btn btn-dark">Registrar Tractor</button>
         </div>

@@ -4,7 +4,7 @@
     <script src="../functions.js"></script>
 </head>
 
-<a href="/homeadmin/vertractores"><button class="btn btn-dark my-3">Volver a Home</button></a>
+<a href="/homeadmin/vertractores"><button class="btn btn-dark my-3">Volver a la lista</button></a>
 
 <div class="container-md my-3 col-md-6">
     <h3 class="my-3">Editar Tractor</h3>
@@ -47,14 +47,41 @@
                 Ingrese chasis del tractor.
             </div>
         </div>
-
+        <label for="arrastrado">Arrastre</label>
+        <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Patente</th>
+                <th>Tipo</th>
+                <th>Chasis</th>
+                <th></th>           
+            </tr>
+        </thead>
+        <tbody>
+            {{#arrastrado}}
+            <tr>
+                <td>{{arrastrado_patente}}</td>
+                <td>{{arrastrado_tipo}}</td>
+                <td>{{arrastrado_chasis}}</td>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="patenteArrastrado" value ="{{arrastrado_patente}}" id="patenteArrastrado" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        ASIGNAR
+                    </label>
+                    <div class="invalid-feedback">
+                        Asigne un arrastre.
+                    </div>
+                </div>
+                </td>
+            </tr>
+            {{/arrastrado}}
+        </tbody>
+    </table>
         <div class="container d-flex justify-content-center">
             <button type="submit" name="submit" class="btn btn-dark">Registrar Tractor</button>
         </div>
     </form>
 </div>
-
 <script src="../functions.js"></script>
-
-
 {{>footer}}

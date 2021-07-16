@@ -131,6 +131,7 @@ class HomeAdminController
     }
 
     public function verTractores(){
+        $data['usuario'] = $_SESSION['usuario'];
         $data['tractor'] = $this->mostrarEnAdminModel->getTractores();
         echo $this->render->render("view/tractoresRegistradosView.php", $data);
     }
@@ -145,6 +146,7 @@ class HomeAdminController
 
     public function verEditarTractor(){
         $patente = $_GET['patente'];
+        $data['arrastrado'] = $this->mostrarEnAdminModel->getArrastrados();
         $data['patente']=$this->mostrarEnAdminModel->verTractores($patente);
         $data['usuario']= $_SESSION['usuario'];
         echo $this->render->render("view/editarTractorView.php", $data);
@@ -156,7 +158,8 @@ class HomeAdminController
         $tractor_patente = $_POST['tractor_patente'];
         $tractor_motor = $_POST['tractor_motor'];
         $tractor_chasis = $_POST['tractor_chasis'];
-        $this->mostrarEnAdminModel->editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis);
+        $patente_arrastrado = $_POST['patenteArrastrado'];
+        $this->mostrarEnAdminModel->editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis, $patente_arrastrado);
         $data['usuario'] = $_SESSION['usuario'];
         echo $this->render->render("view/tractorCargadoView.php", $data);
 

@@ -10,9 +10,9 @@ class TractorModel
     }
 
 
-    public function guardarTractor($marca, $modelo, $patente, $motor, $chasis)
+    public function guardarTractor($marca, $modelo, $patente, $motor, $chasis, $patente_arrastrado)
     {
-        $insert = "INSERT INTO `tractor` (`tractor_marca`, `tractor_modelo`, `tractor_patente`, `tractor_motor`, `tractor_chasis`) VALUES ('$marca', '$modelo', '$patente', '$motor', '$chasis');";
+        $insert = "INSERT INTO `tractor` (`tractor_marca`, `tractor_modelo`, `tractor_patente`, `tractor_motor`, `tractor_chasis`, `patente_arrastrado`) VALUES ('$marca', '$modelo', '$patente', '$motor', '$chasis', '$patente_arrastrado');";
         $this->database->execute($insert);
     }
 

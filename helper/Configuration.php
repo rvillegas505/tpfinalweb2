@@ -122,12 +122,14 @@ class Configuration{
 
     public function getProformaController(){
         $proformaModel = $this->getProformaModel();
-        return new ProformaController($proformaModel, $this->getRender());
+        $mostrarEnAdminModel = $this->getMostrarEnAdminModel();
+        return new ProformaController($proformaModel, $mostrarEnAdminModel, $this->getRender());
     }
 
     public function getTractorController(){
         $tractorModel = $this->getTractorModel();
-        return new TractorController($tractorModel, $this->getRender());
+        $mostrarEnAdminModel = $this->getMostrarEnAdminModel();
+        return new TractorController($tractorModel, $mostrarEnAdminModel, $this->getRender());
     }
 
     public function getArrastradoController(){

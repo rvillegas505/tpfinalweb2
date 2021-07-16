@@ -4,7 +4,7 @@
     <script src="../functions.js"></script>
 </head>
 
-<a href="/homeadmin"><button class="btn btn-dark my-3">Volver a Home</button></a>
+<a href="/homeadmin/verarrastrados"><button class="btn btn-dark my-3">Volver a la lista</button></a>
 
 <div class="container-md my-3 col-md-6">
     <h3 class="my-3">Carga de Arrastrado</h3>
@@ -12,7 +12,7 @@
 
 <div class="container-md my-3 col-md-6">
     <form action="/arrastrado/editarArrastrado" class="row g-3 needs-validation" method="POST" novalidate>
-
+        
         <div class="form-group">
             <label for="tipo">Tipo</label>
             <input type="text" class="form-control" name="tipo" id="tipo" value="{{arrastrado_tipo}}" required>
