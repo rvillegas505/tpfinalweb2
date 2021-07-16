@@ -90,10 +90,40 @@
     </div>
 
     <div class="form-group">
-        <label for="origenViaje">Patente del camión</label>
-        <input type="text" class="form-control" name="patenteCamion" id="patenteCamion" required>
+        <label for="patenteCamion">Patente del camión</label>
+
+        <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Patente</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th></th>           
+            </tr>
+        </thead>
+        <tbody>
+            {{#tractor}}
+            <tr>
+                <td>{{tractor_patente}}</td>
+                <td>{{tractor_marca}}</td>
+                <td>{{tractor_modelo}}</td>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="patenteCamion" value ="{{tractor_patente}}" id="patenteCamion" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        ASIGNAR
+                    </label>
+                    <div class="invalid-feedback">
+                        Asigne un camion.
+                    </div>
+                </div>
+                </td>
+            </tr>
+            {{/tractor}}
+        </tbody>
+    </table>
         <div class="invalid-feedback">
-            Ingrese Patente del camion.
+            Ingrese DNI del chofer.
         </div>
     </div>
 

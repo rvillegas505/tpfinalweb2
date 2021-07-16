@@ -23,11 +23,71 @@ class HomeAdminController
         
     }
 
-
     public function verProformas(){
         $data['proformas'] = $this->mostrarEnAdminModel->getProformas();
         $data['usuario'] = $_SESSION['usuario'];
         echo $this->render->render("view/proformasRegistradasView.php", $data);
+    }
+
+    public function verProforma(){
+        $id = $_GET['id'];
+        $data['proforma']=$this->mostrarEnAdminModel->verProforma($id);
+        echo $this->render->render("view/verProformaView.php", $data);
+    }
+
+    public function bajaProforma(){
+        $id = $_GET['id'];
+        $this->mostrarEnAdminModel->bajaProforma($id);
+        $data['id']= $id;
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/bajaProformaView.php", $data);
+
+    }
+
+    public function verEditarProforma(){
+        $id = $_GET['id'];
+        $data['proforma']=$this->mostrarEnAdminModel->verProforma($id);
+        $data['usuario']= $_SESSION['usuario'];
+        echo $this->render->render("view/editarProformaView.php", $data);
+    }
+
+    public function editarProforma(){
+
+        if (isset($_POST['fechaProforma'])){
+            $id = $_POST['id'];
+            $fechaProforma=$_POST['fechaProforma'];
+            $dniChofer=$_POST['dniChofer'];
+            $nombreCliente = $_POST['nombreCliente'];
+            $cuitCliente = $_POST['cuitCliente'];
+            $direccionCliente = $_POST['direccionCliente'];
+            $clienteTelefono = $_POST['telefonoCliente'];
+            $emailCliente = $_POST['emailCliente'];
+            $origenViaje = $_POST['origenViaje'];
+            $destinoViaje = $_POST['destinoViaje'];
+            $fechaCarga = $_POST['fechaCarga'];
+            $tipoCarga=$_POST['tipoCarga'];
+            $pesoNeto = $_POST['pesoNeto'];
+            $kilometrosEstimado=$_POST['kilometrosEstimado'];
+            $combustibleEstimado = $_POST['combustibleEstimado'];
+            $etdCosteoEstimado = $_POST['etdCosteoEstimado'];
+            $etaCosteoEstimado = $_POST['etaCosteoEstimado'];
+            $viaticosEstimado = $_POST['viaticosEstimado'];
+            $peajesPesajesEstimado = $_POST['peajesPesajesEstimado'];
+            $extrasEstimado = $_POST['extrasEstimado'];
+            $hazardEstimado = $_POST['hazardEstimado'];
+            $reeferEstimado = $_POST['reeferEstimado'];
+            $feeEstimado = $_POST['feeEstimado'];
+            $totalEstimado = $_POST['totalEstimado'];
+            $this->mostrarEnAdminModel->editProforma($id, $fechaProforma, $dniChofer,$nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
+
+            $data['usuario'] = $_SESSION['usuario'];
+            echo $this->render->render("view/proformaCargadaView.php");
+
+        }
+        else{
+            echo "error";
+        }
+
     }
 
     public function verEmpleados(){
@@ -70,65 +130,89 @@ class HomeAdminController
             
     }
 
-    public function bajaProforma(){
-        $id = $_GET['id'];
-        $this->mostrarEnAdminModel->bajaProforma($id);
-        $data['id']= $id;
+    public function verTractores(){
         $data['usuario'] = $_SESSION['usuario'];
-        echo $this->render->render("view/bajaProformaView.php", $data);
+        $data['tractor'] = $this->mostrarEnAdminModel->getTractores();
+        echo $this->render->render("view/tractoresRegistradosView.php", $data);
+    }
+
+    public function bajaTractor(){
+        $patente = $_GET['patente'];
+        $this->mostrarEnAdminModel->bajaTractor($patente);
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/bajaTractorView.php", $data);
 
     }
 
-    public function verProforma(){
-        $id = $_GET['id'];
-        $data['proforma']=$this->mostrarEnAdminModel->verProforma($id);
+    public function verEditarTractor(){
+        $patente = $_GET['patente'];
+        $data['arrastrado'] = $this->mostrarEnAdminModel->getArrastrados();
+        $data['patente']=$this->mostrarEnAdminModel->verTractores($patente);
         $data['usuario']= $_SESSION['usuario'];
-        echo $this->render->render("view/verProformaView.php", $data);
+        echo $this->render->render("view/editarTractorView.php", $data);
     }
 
-    public function verEditarProforma(){
-        $id = $_GET['id'];
-        $data['proforma']=$this->mostrarEnAdminModel->verProforma($id);
+    public function editarTractor(){
+        $tractor_marca = $_POST['tractor_marca'];
+        $tractor_modelo = $_POST['tractor_modelo'];
+        $tractor_patente = $_POST['tractor_patente'];
+        $tractor_motor = $_POST['tractor_motor'];
+        $tractor_chasis = $_POST['tractor_chasis'];
+        $patente_arrastrado = $_POST['patenteArrastrado'];
+        $this->mostrarEnAdminModel->editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis, $patente_arrastrado);
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/tractorCargadoView.php", $data);
+
+    }
+
+    public function verArrastrados(){
+        $data['arrastrado'] = $this->mostrarEnAdminModel->getArrastrados();
+        echo $this->render->render("view/arrastradosRegistradosView.php", $data);
+    }
+
+    public function bajaArrastrado(){
+        $patente = $_GET['patente'];
+        $this->mostrarEnAdminModel->bajaArrastrado($patente);
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/bajaArrastradoView.php", $data);
+
+    }
+
+    public function verEditarArrastrado(){
+        $patente = $_GET['patente'];
+        $data['patente']=$this->mostrarEnAdminModel->verTractores($patente);
         $data['usuario']= $_SESSION['usuario'];
-        echo $this->render->render("view/editarProformaView.php", $data);
+        echo $this->render->render("view/editarArrastradoView.php", $data);
     }
 
-    public function editarProforma(){
+    public function editarArrastrado(){
+        $tractor_marca = $_POST['tractor_marca'];
+        $tractor_modelo = $_POST['tractor_modelo'];
+        $tractor_patente = $_POST['tractor_patente'];
+        $tractor_motor = $_POST['tractor_motor'];
+        $tractor_chasis = $_POST['tractor_chasis'];
+        $this->mostrarEnAdminModel->editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis);
+        $data['usuario'] = $_SESSION['usuario'];
+        echo $this->render->render("view/arrastradoCargadoView.php", $data);
+
+    }
+
+    public function printPdf(){
         
-        if (isset($_POST['fechaProforma'])){
-            $id = $_POST['id'];
-            $fechaProforma=$_POST['fechaProforma'];
-            $dniChofer=$_POST['dniChofer'];
-            $nombreCliente = $_POST['nombreCliente'];
-            $cuitCliente = $_POST['cuitCliente'];
-            $direccionCliente = $_POST['direccionCliente'];
-            $clienteTelefono = $_POST['telefonoCliente'];
-            $emailCliente = $_POST['emailCliente'];
-            $origenViaje = $_POST['origenViaje'];
-            $destinoViaje = $_POST['destinoViaje'];
-            $fechaCarga = $_POST['fechaCarga'];
-            $tipoCarga=$_POST['tipoCarga'];
-            $pesoNeto = $_POST['pesoNeto'];
-            $kilometrosEstimado=$_POST['kilometrosEstimado'];
-            $combustibleEstimado = $_POST['combustibleEstimado'];
-            $etdCosteoEstimado = $_POST['etdCosteoEstimado'];
-            $etaCosteoEstimado = $_POST['etaCosteoEstimado'];
-            $viaticosEstimado = $_POST['viaticosEstimado'];
-            $peajesPesajesEstimado = $_POST['peajesPesajesEstimado'];
-            $extrasEstimado = $_POST['extrasEstimado'];
-            $hazardEstimado = $_POST['hazardEstimado'];
-            $reeferEstimado = $_POST['reeferEstimado'];
-            $feeEstimado = $_POST['feeEstimado'];
-            $totalEstimado = $_POST['totalEstimado'];
-            $this->mostrarEnAdminModel->editProforma($id, $fechaProforma, $dniChofer,$nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
+        include_once('helper/DomPdf.php');
+        $id = $_GET['id'];
+        $html = file_get_contents_curl("http://localhost/homeadmin/verproforma/id=$id?");
+        $dompdf->loadHtml($html);
 
-            $data['usuario'] = $_SESSION['usuario'];
-            echo $this->render->render("view/proformaCargadaView.php");
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
 
-        }
-        else{
-            echo "error";
-        }
-    
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream("document.pdf" , ['Attachment' => 0]);
+
+        
     }
 }

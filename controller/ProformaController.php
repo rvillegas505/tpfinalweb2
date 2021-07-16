@@ -2,10 +2,12 @@
 
 class ProformaController{
     private $proformaModel;
+    private $mostrarEnAdminModel;
     private $render;
 
-    public function __construct($proformaModel, $render){
+    public function __construct($proformaModel, $mostrarEnAdminModel, $render){
         $this->proformaModel = $proformaModel;
+        $this->mostrarEnAdminModel = $mostrarEnAdminModel;
         $this->render = $render;
     }
 
@@ -13,6 +15,7 @@ class ProformaController{
             if ($_SESSION['usuario'] != null){
                 $data['usuario'] = $_SESSION['usuario'];
                 $data['empleados'] = $this->proformaModel->verChoferesDisponibles();
+                $data['tractor'] = $this->mostrarEnAdminModel->getTractores();
                 echo $this->render->render("view/proformaView.php", $data);
             }
             else{
@@ -28,7 +31,7 @@ class ProformaController{
     }
 
     public function procesarProforma(){
-        if (isset($_POST['fechaProforma'])){
+        if (isset($_POST['submit'])){
 
             $fechaProforma=$_POST['fechaProforma'];
             $dniChofer=$_POST['dniChofer'];
@@ -55,7 +58,7 @@ class ProformaController{
             $feeEstimado = $_POST['feeEstimado'];
             $totalEstimado = $_POST['totalEstimado'];
             $this->proformaModel->guardarProforma($fechaProforma, $dniChofer, $nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $camionPatente , $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
-
+            $this->mostrarEnAdminModel->cambiarANoDisponible($dniChofer);
 
             /*$dniChofer=$_POST['dniChofer'];
             $this->proformaModel->guardarChoferProforma($dniChofer);
@@ -98,7 +101,7 @@ class ProformaController{
             */
 
             $data['usuario'] = $_SESSION['usuario'];
-            echo $this->render->render("view/proformaCargadaView.php");
+            echo $this->render->render("view/proformaCargadaView.php", $data);
 
         }
         else{

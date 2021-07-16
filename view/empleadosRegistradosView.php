@@ -26,7 +26,12 @@
                 <td><button class="btn btn-danger">BAJA</button></td>
                 </form>
                 <form action="rolempleado/dni={{dni}}" method="GET">
-                    <td><input type="text" name="rol" placeholder="Rol"></button>
+                    <td><select name="rol">
+                        <option value="chofer">Chofer</option>
+                        <option value="admin">Administrador</option>
+                        <option value="supervisor">Supervisor</option>
+                        <option value="encargado">Encargado</option>
+                    </select>
                     <button class="btn btn-warning">CAMBIAR ROL</button></td>
                 </form>
                 <form action="cambiarDisponibilidadEmpleado/dni={{dni}}" method="GET">

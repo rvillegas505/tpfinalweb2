@@ -4,8 +4,10 @@
     <list default="true" id="54db1f16-fc71-490f-98ed-ef7053fa3a42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/HomeAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/HomeAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/helper/Configuration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/MostrarEnAdminModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/MostrarEnAdminModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/empleadosRegistradosView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/empleadosRegistradosView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/arrastradosRegistradosView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/arrastradosRegistradosView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/tractoresRegistradosView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/tractoresRegistradosView.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,7 @@
       <workItem from="1624996152017" duration="16073000" />
       <workItem from="1625944054927" duration="1052000" />
       <workItem from="1625946466158" duration="1853000" />
+      <workItem from="1626291870504" duration="16335000" />
     </task>
     <servers />
   </component>
