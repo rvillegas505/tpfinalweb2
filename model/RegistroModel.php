@@ -10,7 +10,7 @@ class RegistroModel
     }
 
     public function guardarRegistro($registro){
-        $insert = "INSERT INTO `empleados` (nombreApellido, dni, fechaNac, email, pass)" .  $registro . ";";
+        $insert = "INSERT INTO `empleados` (nombreApellido, dni, fechaNac, email, pass, hash)" .  $registro . ";";
         $this->database->execute($insert);
     }
 
@@ -19,12 +19,8 @@ class RegistroModel
         $this->database->execute("INSERT INTO empleados (nombreApellido, dni, email, pass) VALUES ('rodri', '12345678', 'rodri@gmail.com', '123456'");
     }
 
-    public function getCancion($id){
-        $sql = "SELECT * FROM canciones where idCancion = " . $id;
-        return $this->database->query($sql);
-    }
-
     public function getCorreo($email){
         $sql = "SELECT * FROM empleados WHERE email = '$email'";
+        return $this->database->query($sql);
     }
 }

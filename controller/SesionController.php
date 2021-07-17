@@ -8,22 +8,20 @@ class SesionController{
         $this->sesionModel = $sesionModel;
         $this->render = $render;
     }
-
     
     public function inicioSesion(){
         if (isset($_POST['usuario'])){
-
             $usuario= $_POST['usuario'];
             $pass = $_POST['clave'];
-
             $resultado = $this->sesionModel->getUsuario($usuario, $pass);
             if ($resultado){
                 $_SESSION['usuario']= $resultado["0"]["nombreApellido"];
 
                 $rol = $resultado["0"]["rol"];
+
                 $_SESSION['rol']=$rol;
                 switch($rol){
-                    case "admin": 
+                    case "admin":
                         header("location: /homeAdmin");
                         break;
                     case "chofer":

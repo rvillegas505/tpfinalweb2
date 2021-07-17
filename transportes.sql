@@ -156,9 +156,8 @@ INSERT INTO arrastrado (arrastrado_tipo, arrastrado_patente, arrastrado_chasis) 
 alter table tractor add patente_arrastrado varchar(7), add constraint fk_patente_arrastre_tractor foreign key(patente_arrastrado) references arrastrado(arrastrado_patente);
 alter table proforma add constraint fk_patente_tractor_proforma foreign key(camion_patente) references tractor(tractor_patente);
 
-
-
-
+alter table empleados add hash varchar(32);
+alter table empleados add activo tinyint(1);
 
 
 
