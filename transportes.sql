@@ -162,10 +162,6 @@ alter table proforma add constraint fk_patente_tractor_proforma foreign key(cami
 
 
 
-
-
-
-
 /*CREATE DATABASE transportes;
 USE transportes;
 
