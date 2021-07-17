@@ -60,10 +60,10 @@ class MostrarEnAdminModel
         return $this->database->query($query);
     }
 
-    public function editArrastrado($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis) {
+    public function editArrastrado($arrastrado_tipo, $arrastrado_patente, $arrastrado_chasis) {
 
-        $query = "UPDATE `tractor` SET `tractor`.`tractor_marca` = '$tractor_marca', `tractor`.`tractor_modelo`= '$tractor_modelo', `tractor`.`tractor_patente` = '$tractor_patente' , `tractor`.`tractor_motor` = '$tractor_motor' ,
-        `tractor`.`tractor_chasis` = '$tractor_chasis' WHERE `tractor`.`tractor_patente` = '$tractor_patente'";
+        $query = "UPDATE `arrastrado` SET `arrastrado`.`arrastrado_tipo` = '$arrastrado_tipo', `arrastrado`.`arrastrado_patente`= '$arrastrado_patente', `arrastrado`.`arrastrado_chasis` = '$arrastrado_chasis'
+        WHERE `arrastrado`.`arrastrado_patente` = '$arrastrado_patente'";
         $this->database->execute($query);
     }
 

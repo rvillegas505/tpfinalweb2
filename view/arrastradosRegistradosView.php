@@ -1,7 +1,7 @@
 {{>headerLogeado}}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <div class="container-md">
-    <h2>Tractores Registrados</h2>
+    <h2>Arrastrados Registrados</h2>
     <table class="table table-hover">
         <a href="/arrastrado"><button class="btn btn-success my-3">Agregar Arrastrado</button></a>
         <thead class="thead-dark">
