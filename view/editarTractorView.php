@@ -9,6 +9,7 @@
 <div class="container-md my-3 col-md-6">
     <h3 class="my-3">Editar Tractor</h3>
 </div>
+{{#tractores}}
 
 <div class="container-md my-3 col-md-6">
     <form action="/homeadmin/editarTractor" class="row g-3 needs-validation" method="POST" novalidate>
@@ -81,6 +82,7 @@
         <div class="container d-flex justify-content-center">
             <button type="submit" name="submit" class="btn btn-dark">Registrar Tractor</button>
         </div>
+        {{/tractores}}
     </form>
 </div>
 <script src="../functions.js"></script>

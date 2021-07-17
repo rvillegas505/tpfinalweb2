@@ -9,10 +9,10 @@
 <div class="container-md my-3 col-md-6">
     <h3 class="my-3">Carga de Arrastrado</h3>
 </div>
-
+{{#arrastrado}}
 <div class="container-md my-3 col-md-6">
-    <form action="/arrastrado/editarArrastrado" class="row g-3 needs-validation" method="POST" novalidate>
-        
+
+    <form action="/homeadmin/editarArrastrado" class="row g-3 needs-validation" method="POST" novalidate>
         <div class="form-group">
             <label for="tipo">Tipo</label>
             <input type="text" class="form-control" name="tipo" id="tipo" value="{{arrastrado_tipo}}" required>
@@ -38,7 +38,7 @@
         <div class="container d-flex justify-content-center">
             <button type="submit" name="submit" class="btn btn-dark">Registrar Arrastrado</button>
         </div>
-
+{{/arrastrado}} 
     </form>
 </div>
 

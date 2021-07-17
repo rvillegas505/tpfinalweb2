@@ -147,17 +147,17 @@ class HomeAdminController
     public function verEditarTractor(){
         $patente = $_GET['patente'];
         $data['arrastrado'] = $this->mostrarEnAdminModel->getArrastrados();
-        $data['patente']=$this->mostrarEnAdminModel->verTractores($patente);
+        $data['tractores']=$this->mostrarEnAdminModel->verTractores($patente);
         $data['usuario']= $_SESSION['usuario'];
         echo $this->render->render("view/editarTractorView.php", $data);
     }
 
     public function editarTractor(){
-        $tractor_marca = $_POST['tractor_marca'];
-        $tractor_modelo = $_POST['tractor_modelo'];
-        $tractor_patente = $_POST['tractor_patente'];
-        $tractor_motor = $_POST['tractor_motor'];
-        $tractor_chasis = $_POST['tractor_chasis'];
+        $tractor_marca = $_POST['marca'];
+        $tractor_modelo = $_POST['modelo'];
+        $tractor_patente = $_POST['patente'];
+        $tractor_motor = $_POST['motor'];
+        $tractor_chasis = $_POST['chasis'];
         $patente_arrastrado = $_POST['patenteArrastrado'];
         $this->mostrarEnAdminModel->editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis, $patente_arrastrado);
         $data['usuario'] = $_SESSION['usuario'];
@@ -166,6 +166,7 @@ class HomeAdminController
     }
 
     public function verArrastrados(){
+        $data['usuario'] = $_SESSION['usuario'];
         $data['arrastrado'] = $this->mostrarEnAdminModel->getArrastrados();
         echo $this->render->render("view/arrastradosRegistradosView.php", $data);
     }
@@ -180,18 +181,16 @@ class HomeAdminController
 
     public function verEditarArrastrado(){
         $patente = $_GET['patente'];
-        $data['patente']=$this->mostrarEnAdminModel->verTractores($patente);
+        $data['arrastrado']=$this->mostrarEnAdminModel->verArrastrados($patente);
         $data['usuario']= $_SESSION['usuario'];
         echo $this->render->render("view/editarArrastradoView.php", $data);
     }
 
     public function editarArrastrado(){
-        $tractor_marca = $_POST['tractor_marca'];
-        $tractor_modelo = $_POST['tractor_modelo'];
-        $tractor_patente = $_POST['tractor_patente'];
-        $tractor_motor = $_POST['tractor_motor'];
-        $tractor_chasis = $_POST['tractor_chasis'];
-        $this->mostrarEnAdminModel->editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis);
+        $arrastrado_tipo = $_POST['tipo'];
+        $arrastrado_patente = $_POST['patente'];
+        $arrastrado_chasis = $_POST['chasis'];
+        $this->mostrarEnAdminModel->editArrastrado($arrastrado_tipo, $arrastrado_patente, $arrastrado_chasis);
         $data['usuario'] = $_SESSION['usuario'];
         echo $this->render->render("view/arrastradoCargadoView.php", $data);
 
