@@ -35,7 +35,7 @@ class MostrarEnAdminModel
     public function editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis, $patente_arrastrado) {
 
         $query = "UPDATE `tractor` SET `tractor`.`tractor_marca` = '$tractor_marca', `tractor`.`tractor_modelo`= '$tractor_modelo', `tractor`.`tractor_patente` = '$tractor_patente' , `tractor`.`tractor_motor` = '$tractor_motor' ,
-        `tractor`.`tractor_chasis` = '$tractor_chasis' WHERE `tractor`.`patente_arrastrado` = '$patente_arrastrado' `tractor`.`tractor_patente` = '$tractor_patente'";
+        `tractor`.`tractor_chasis` = '$tractor_chasis', `tractor`.`patente_arrastrado` = '$patente_arrastrado' WHERE `tractor`.`tractor_patente` = '$tractor_patente'";
         $this->database->execute($query);
     }
 

@@ -153,11 +153,11 @@ class HomeAdminController
     }
 
     public function editarTractor(){
-        $tractor_marca = $_POST['tractor_marca'];
-        $tractor_modelo = $_POST['tractor_modelo'];
-        $tractor_patente = $_POST['tractor_patente'];
-        $tractor_motor = $_POST['tractor_motor'];
-        $tractor_chasis = $_POST['tractor_chasis'];
+        $tractor_marca = $_POST['marca'];
+        $tractor_modelo = $_POST['modelo'];
+        $tractor_patente = $_POST['patente'];
+        $tractor_motor = $_POST['motor'];
+        $tractor_chasis = $_POST['chasis'];
         $patente_arrastrado = $_POST['patenteArrastrado'];
         $this->mostrarEnAdminModel->editTractor($tractor_marca, $tractor_modelo, $tractor_patente, $tractor_motor, $tractor_chasis, $patente_arrastrado);
         $data['usuario'] = $_SESSION['usuario'];
