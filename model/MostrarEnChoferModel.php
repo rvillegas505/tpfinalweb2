@@ -37,4 +37,9 @@ class MostrarEnChoferModel
     public function listaProformas(){
         return $this->database->query("SELECT id_proforma FROM proforma;");
     }
+
+    public function getViaje($dni){
+        $consulta = "SELECT * FROM `transportes`.`viaje` WHERE `dni_chofer` = '$dni' AND `estado` = 'En curso';";
+        return $this->database->query($consulta);
+    }
 }

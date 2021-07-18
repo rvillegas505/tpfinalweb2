@@ -18,7 +18,8 @@ class SesionController{
                 $_SESSION['usuario']= $resultado["0"]["nombreApellido"];
 
                 $rol = $resultado["0"]["rol"];
-
+                $dni = $resultado["0"]["dni"];
+                $_SESSION['dni']=$dni;
                 $_SESSION['rol']=$rol;
                 switch($rol){
                     case "admin":

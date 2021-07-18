@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "") or die(mysqli_error($conn));
+    $conn = mysqli_connect("localhost", "root", "abcd") or die(mysqli_error($conn));
     mysqli_select_db($conn,"transportes") or die(mysqli_error($conn));
 
     if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){

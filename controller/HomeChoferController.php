@@ -14,8 +14,21 @@ class HomeChoferController
     public function execute()
     {
         if ($_SESSION['usuario'] != null && $_SESSION['rol']=='chofer'){
+
+            $dni = $_SESSION['dni'];
+
+            $resultado = $this->mostrarEnChoferModel->getViaje($dni);
+
+            if ($resultado){
             $data['usuario'] = $_SESSION['usuario'];
+            $dni = $_SESSION['dni'];
+            $data['viaje'] = $this->mostrarEnChoferModel->getViaje($dni);
             echo $this->render->render("view/homeChoferView.php", $data);
+            }
+            else{
+                $data['usuario'] = $_SESSION['usuario'];
+                echo $this->render->render("view/homeChoferSinViajeView.php", $data);
+            }
         }
         else{
             echo $this->render->render("view/errorView.php");
