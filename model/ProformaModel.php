@@ -17,6 +17,7 @@ class ProformaModel
         $insert = "INSERT INTO `viaje` (`id_viaje`,`dni_chofer`,`origen`,`destino`,`fecha_de_carga`,`eta`,`estado`) VALUES (NULL,'$dniChofer','$origenViaje','$destinoViaje','$fechaCarga','$etaCosteoEstimado', 'En curso');";
         $this->database->execute($insert);
     }
+    
     public function verChoferesDisponibles(){
         $query = "SELECT * FROM `empleados` WHERE `empleados`.`rol` = 'chofer' AND `empleados`.`disponible` = TRUE;";
         return $this->database->query($query);

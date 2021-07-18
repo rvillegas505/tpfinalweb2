@@ -29,6 +29,11 @@ class MostrarEnChoferModel
         $this->database->execute($insert);
     }
 
+    public function finalizarViaje(){
+        $finalizar = "UPDATE `transportes`.`viaje` SET `estado` = 'Finalizado' WHERE (`id_viaje` = '1');";
+        $this->database->execute($finalizar);
+    }
+
     public function listaProformas(){
         return $this->database->query("SELECT id_proforma FROM proforma;");
     }

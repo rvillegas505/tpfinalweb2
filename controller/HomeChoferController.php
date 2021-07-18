@@ -46,9 +46,11 @@ class HomeChoferController
             $ubifinal = 0;
             $estado = "En curso";
 
-            if(isset($_POST['ubifinal'])){
-            $ubifinal = $_POST['ubifinal'];
-            $estado = "Finalizado";
+            if(isset($_POST['ubifinal'])){                
+                                
+                $estado = "Finalizado";
+                $this->mostrarEnChoferModel->finalizarViaje($estado);
+                $ubifinal = 1;
             }            
 
             $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
