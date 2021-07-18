@@ -60,8 +60,11 @@ class HomeChoferController
             $latitud = $_POST['latitudinput'];
             $ubifinal = 0;
             $estado = "En curso";
-            $id = $_GET['id'];
+            $id = $_GET['id'];       
 
+            $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
+            $this->mostrarEnChoferModel->registrarPosicionActual($longitud, $latitud, $kmRecorridos, $combustibleGastado, $peajes, $gastos, $total, $ubifinal, $id);
+            
             if(isset($_POST['ubifinal'])){                
                                 
                 $estado = "Finalizado";
@@ -69,10 +72,7 @@ class HomeChoferController
                 $this->mostrarEnChoferModel->finalizarViaje($estado, $id);
 
                 $ubifinal = 1;
-            }            
-
-            $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
-            $this->mostrarEnChoferModel->registrarPosicionActual($longitud, $latitud, $kmRecorridos, $combustibleGastado, $peajes, $gastos, $total, $ubifinal);
+            }   
             $data['usuario'] = $_SESSION['usuario'];
             echo $this->render->render("view/posicionCargadaView.php", $data);
 

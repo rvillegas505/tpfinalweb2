@@ -174,7 +174,8 @@ create table viaje (
 					
 );
 
-
+/* alter para modificacion de posicion_actual 18 de julio*/
+alter table posicion_actual add column id_viaje int;
 
 /*CREATE DATABASE transportes;
 USE transportes;

@@ -24,13 +24,15 @@ class MostrarEnChoferModel
         return "Latitud"."-"."Longutid";
     }
 
-    public function registrarPosicionActual($longitud, $latitud, $km, $combustible, $peajes, $extras, $total, $ubifinal){
-        $insert = "INSERT INTO `posicion_actual` (`id_posicion_actual`, `longitud`, `latitud`, `km_recorridos`, `combustible_gastado`, `peajes`, `extras`, `total`, `pos_final`) VALUES (NULL, '$longitud', '$latitud', '$km', '$combustible', '$peajes', '$extras', '$total', '$ubifinal');";
+    public function registrarPosicionActual($longitud, $latitud, $km, $combustible, $peajes, $extras, $total, $ubifinal, $id){
+
+        $insert = "INSERT INTO `posicion_actual` (`id_posicion_actual`, `longitud`, `latitud`, `km_recorridos`, `combustible_gastado`, `peajes`, `extras`, `total`, `pos_final`, `id_viaje`) VALUES (NULL, '$longitud', '$latitud', '$km', '$combustible', '$peajes', '$extras', '$total', '$ubifinal', '$id');";
         $this->database->execute($insert);
     }
 
     public function finalizarViaje($estado, $id){
-        $total = "SELECT SUM(km_recorridos) FROM `transportes`.`posicion_actual`;";
+        
+        $total = "SELECT SUM(km_recorridos) FROM `transportes`.`posicion_actual` WHERE `posicion_actual`.`id_viaje` = '$id';";
         $totalkm = $this->database->query($total);
         $totalkm = $totalkm['0']['SUM(km_recorridos)'];
 
