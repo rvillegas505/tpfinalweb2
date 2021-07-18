@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="54db1f16-fc71-490f-98ed-ef7053fa3a42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/RegistroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/RegistroController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/SesionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/SesionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/RegistroModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/RegistroModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/SesionModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/SesionModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/errorView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/errorView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/partial/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/header.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/partial/headerLogeado.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/headerLogeado.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/partial/headerNoLogin.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/headerNoLogin.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,7 @@
       <workItem from="1626291870504" duration="16335000" />
       <workItem from="1626330883906" duration="223000" />
       <workItem from="1626470530748" duration="1511000" />
-      <workItem from="1626544812678" duration="6284000" />
+      <workItem from="1626544812678" duration="11668000" />
     </task>
     <servers />
   </component>
