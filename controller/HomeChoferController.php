@@ -62,7 +62,9 @@ class HomeChoferController
             if(isset($_POST['ubifinal'])){                
                                 
                 $estado = "Finalizado";
+
                 $this->mostrarEnChoferModel->finalizarViaje($estado);
+
                 $ubifinal = 1;
             }            
 

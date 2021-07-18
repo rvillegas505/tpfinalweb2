@@ -29,9 +29,14 @@ class MostrarEnChoferModel
         $this->database->execute($insert);
     }
 
-    public function finalizarViaje(){
-        $finalizar = "UPDATE `transportes`.`viaje` SET `estado` = 'Finalizado' WHERE (`id_viaje` = '1');";
+    public function finalizarViaje($estado){
+        $total = "SELECT SUM(km_recorridos) FROM `transportes`.`posicion_actual`;";
+        $totalkm = $this->database->query($total);
+        $totalkm = $totalkm['0']['SUM(km_recorridos)'];
+
+        $finalizar = "UPDATE `transportes`.`viaje` SET `estado` = '$estado', `km_totales` = '$totalkm' WHERE (`id_viaje` = '1');";        
         $this->database->execute($finalizar);
+        
     }
 
     public function listaProformas(){
