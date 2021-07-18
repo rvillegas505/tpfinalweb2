@@ -1,3 +1,4 @@
+drop database transportes;
 CREATE DATABASE transportes;
 USE transportes;
 
@@ -158,6 +159,20 @@ alter table proforma add constraint fk_patente_tractor_proforma foreign key(cami
 
 alter table empleados add hash varchar(32);
 alter table empleados add activo tinyint(1);
+
+create table viaje (
+					id_viaje int AUTO_INCREMENT,                    
+                    dni_chofer int,         
+                    origen varchar(50),
+                    destino varchar(50),
+                    fecha_de_carga date,
+                    eta time,
+                    estado varchar(50),
+                    km_totales int,
+                    CONSTRAINT primary key (id_viaje),					
+                    CONSTRAINT foreign key(dni_chofer) references proforma(dni_chofer)
+					
+);
 
 
 

@@ -39,6 +39,8 @@ class HomeChoferController
     public function mostrarRegistroPosicion(){
         if ($_SESSION['usuario'] != null && $_SESSION['rol'] == 'chofer'){
             $data['usuario'] = $_SESSION['usuario'];
+            $dni = $_SESSION['dni'];
+            $data['viaje'] = $this->mostrarEnChoferModel->getViaje($dni);
             echo $this->render->render("view/posicionActualView.php", $data);
         }
         else{
@@ -58,12 +60,13 @@ class HomeChoferController
             $latitud = $_POST['latitudinput'];
             $ubifinal = 0;
             $estado = "En curso";
+            $id = $_GET['id'];
 
             if(isset($_POST['ubifinal'])){                
                                 
                 $estado = "Finalizado";
-
-                $this->mostrarEnChoferModel->finalizarViaje($estado);
+                $id = $_GET['id'];
+                $this->mostrarEnChoferModel->finalizarViaje($estado, $id);
 
                 $ubifinal = 1;
             }            

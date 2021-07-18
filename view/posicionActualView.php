@@ -1,12 +1,12 @@
 {{>headerLogeado}}
 
 <a href="/homeChofer"><button class="btn btn-dark my-3">Volver a Home</button></a>
-
+{{#viaje}}
 <div class="container-md my-3 col-md-6">
 <h3 class="my-3">Carga de posicion actual</h3>
 </div>
 <div class="container-md my-3 col-md-6">
-    <form action="/homeChofer/procesarPosicionActual" method="POST">
+    <form action="/homeChofer/procesarPosicionActual/id={{id_viaje}}" method="POST">
     <div class="form-group">
         <label for="kilometrosRecorridos">Kilometros recorridos</label>
         <input type="number" class="form-control" name="kilometrosRecorridos" id="kilometrosRecorridos" required>
@@ -53,7 +53,7 @@
     </div>        
         <!-- <a href="/homechofer/mostrarubicacion"><button class="btn btn-dark my-3">Obtener ubicacion</button></a> -->
     <button class="btn btn-danger my-3" onclick="loadMap()">Mostrar Ubicacion</button>
-    
+    {{/viaje}}    
 </div>
 
 {{>footer}}
@@ -96,6 +96,5 @@
         
     }
 
-    //google.maps.event.addDomListener(window, 'load', loadMap);
 </script>
 </div>
