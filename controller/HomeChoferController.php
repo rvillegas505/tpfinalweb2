@@ -44,9 +44,11 @@ class HomeChoferController
             $longitud = $_POST['longitudinput'];
             $latitud = $_POST['latitudinput'];
             $ubifinal = 0;
+            $estado = "En curso";
 
             if(isset($_POST['ubifinal'])){
             $ubifinal = $_POST['ubifinal'];
+            $estado = "Finalizado";
             }            
 
             $total = $kmRecorridos + $combustibleGastado + $peajes + $gastos;
