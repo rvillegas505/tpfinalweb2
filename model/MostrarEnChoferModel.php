@@ -44,7 +44,7 @@ class MostrarEnChoferModel
 
         $finalizar = "UPDATE `transportes`.`viaje` SET `estado` = '$estado', `km_totales` = '$totalkm' WHERE (`id_viaje` = '$id');";        
         $this->database->execute($finalizar);
-        
+
     }
 
     public function listaProformas(){

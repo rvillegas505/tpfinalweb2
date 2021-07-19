@@ -70,7 +70,6 @@ class HomeChoferController
                 $estado = "Finalizado";
                 $id = $_GET['id'];
                 $this->mostrarEnChoferModel->finalizarViaje($estado, $id);
-
                 $ubifinal = 1;
             }   
             $data['usuario'] = $_SESSION['usuario'];
@@ -81,6 +80,7 @@ class HomeChoferController
             echo "error";
         }
     }
+        
 
     public function registrardatos()
     {

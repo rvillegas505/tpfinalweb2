@@ -181,7 +181,7 @@ alter table posicion_actual add column id_viaje int;
 alter table tractor add column km_camion int default 0;
 alter table viaje add column patente_camion varchar(8);
 /*CREADO PARA SUMAR KM A CAMION*/
-
+        
 
 /*CREATE DATABASE transportes;
 USE transportes;
