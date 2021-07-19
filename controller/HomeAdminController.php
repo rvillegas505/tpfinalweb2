@@ -90,6 +90,16 @@ class HomeAdminController
 
     }
 
+    public function verViajePosicion(){
+        $id = $_GET['id'];
+
+        $data['posiciones'] = $this->mostrarEnAdminModel->getPosicionesViaje($id);
+        $data['viaje'] = $this->mostrarEnAdminModel->getViaje($id);
+        $data['usuario'] = $_SESSION['usuario'];
+
+        echo $this->render->render("view/viajePosicionEnAdminView.php", $data);
+    }
+
     public function verEmpleados(){
         $data['empleados'] = $this->mostrarEnAdminModel->getEmpleados();
         $data['usuario'] = $_SESSION['usuario'];
