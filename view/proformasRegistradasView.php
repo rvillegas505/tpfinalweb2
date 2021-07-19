@@ -13,6 +13,7 @@
                 <th><img src="/view/images/xmark.png" style="height: 2rem; width:2rem;"/></th>
                 <th><img src="/view/images/viewdetails.png" style="height: 2rem; width:2rem;"/></th> 
                 <th>Editar</th>
+                <th>Viaje</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +31,10 @@
                 </form>    
                 <form action="vereditarproforma/id={{id_proforma}}" method="GET">
                 <td><button class="btn btn-primary">EDITAR</button></td>
-                </form>     
+                </form>
+                <form action="verViajePosicion/id={{id_proforma}}" method="GET">
+                <td><button class="btn btn-primary">Ver Viaje</button></td>
+                </form>        
             </tr>
             {{/proformas}}
         </tbody>

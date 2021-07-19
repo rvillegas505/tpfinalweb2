@@ -56,7 +56,7 @@ class ProformaController{
             $hazardEstimado = $_POST['hazardEstimado'];
             $reeferEstimado = $_POST['reeferEstimado'];
             $feeEstimado = $_POST['feeEstimado'];
-            $totalEstimado = $_POST['totalEstimado'];
+            $totalEstimado = $combustibleEstimado + $viaticosEstimado + $peajesPesajesEstimado + $extrasEstimado;
             $this->proformaModel->guardarProforma($fechaProforma, $dniChofer, $nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $camionPatente , $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
             $this->mostrarEnAdminModel->cambiarANoDisponible($dniChofer);
             //AL MISMO TIEMPO DE REGISTRAR PROFORMA REGISTRA VIAJE.

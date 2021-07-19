@@ -110,4 +110,17 @@ class MostrarEnAdminModel
         WHERE `proforma`.`id_proforma` = '$id' ";
         $this->database->execute($query);
     }
+
+    public function getPosicionesViaje($id){
+
+        $query = "SELECT * FROM `posicion_actual` WHERE `posicion_actual`.`id_viaje` = '$id';";
+        return $this->database->query($query);
+    }
+
+
+    public function getViaje($id){
+
+        $query = "SELECT * FROM `viaje` WHERE `viaje`.`id_viaje` = '$id';";
+        return $this->database->query($query);
+    }
 }
