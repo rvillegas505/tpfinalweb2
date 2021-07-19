@@ -230,13 +230,13 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <!--<div class="form-group">
         <label for="totalEstimado">Total</label>
         <input type="number" class="form-control" name="totalEstimado" id="totalEstimado" required>
         <div class="invalid-feedback">
             Complete el campo.
         </div>
-    </div>
+    </div>-->
 
     <!--SECCION Personal-->
 
