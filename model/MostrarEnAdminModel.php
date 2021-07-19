@@ -18,7 +18,7 @@ class MostrarEnAdminModel
     }
 
     public function getTractores(){
-        return $this->database->query("SELECT tractor_marca,tractor_modelo,tractor_patente,tractor_motor,tractor_chasis FROM transportes.tractor;");
+        return $this->database->query("SELECT tractor_marca,tractor_modelo,tractor_patente,tractor_motor,tractor_chasis,km_camion FROM transportes.tractor;");
     }
 
     public function bajaTractor($patente){

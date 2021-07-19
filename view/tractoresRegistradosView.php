@@ -11,6 +11,7 @@
             <th>Patente</th>
             <th>Motor</th>
             <th>Chasis</th>
+            <th>Kilometros</th>
             <th><h5 class="text-dark">.</h5></th>
         </tr>
         </thead>
@@ -22,6 +23,7 @@
             <td>{{tractor_patente}}</td>
             <td>{{tractor_motor}}</td>
             <td>{{tractor_chasis}}</td>
+            <td>{{km_camion}}</td>
             <form action="bajatractor/patente={{tractor_patente}}" method="GET">
                 <td><button class="btn btn-danger">ELIMINAR</button></td>
             </form>

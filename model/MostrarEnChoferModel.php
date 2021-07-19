@@ -36,6 +36,12 @@ class MostrarEnChoferModel
         $totalkm = $this->database->query($total);
         $totalkm = $totalkm['0']['SUM(km_recorridos)'];
 
+        $camionQuery = "SELECT `patente_camion` FROM `transportes`.`viaje` WHERE `id_viaje` = '$id';";
+        $camionPatente = $this->database->query($camionQuery);
+        $camion = $camionPatente['0']['patente_camion'];
+        $sumarKmCamion = "UPDATE `transportes`.`tractor` SET `km_camion` = `km_camion` + '$totalkm' WHERE `tractor_patente`='$camion';";
+        $this->database->execute($sumarKmCamion);
+
         $finalizar = "UPDATE `transportes`.`viaje` SET `estado` = '$estado', `km_totales` = '$totalkm' WHERE (`id_viaje` = '$id');";        
         $this->database->execute($finalizar);
         

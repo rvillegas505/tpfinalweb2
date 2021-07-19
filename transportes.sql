@@ -177,6 +177,12 @@ create table viaje (
 /* alter para modificacion de posicion_actual 18 de julio*/
 alter table posicion_actual add column id_viaje int;
 
+/*CREADO PARA SUMAR KM A CAMION*/
+alter table tractor add column km_camion int default 0;
+alter table viaje add column patente_camion varchar(8);
+/*CREADO PARA SUMAR KM A CAMION*/
+
+
 /*CREATE DATABASE transportes;
 USE transportes;
 
