@@ -123,4 +123,9 @@ class MostrarEnAdminModel
         $query = "SELECT * FROM `viaje` WHERE `viaje`.`id_viaje` = '$id';";
         return $this->database->query($query);
     }
+
+    public function verChoferesDisponibles(){
+        $query = "SELECT * FROM `empleados` WHERE `empleados`.`rol` = 'chofer' AND `empleados`.`disponible` = TRUE;";
+        return $this->database->query($query);
+    }
 }

@@ -47,6 +47,7 @@ class HomeAdminController
     public function verEditarProforma(){
         $id = $_GET['id'];
         $data['proforma']=$this->mostrarEnAdminModel->verProforma($id);
+        $data['empleados'] = $this->mostrarEnAdminModel->verChoferesDisponibles();
         $data['usuario']= $_SESSION['usuario'];
         echo $this->render->render("view/editarProformaView.php", $data);
     }
@@ -79,7 +80,7 @@ class HomeAdminController
             $feeEstimado = $_POST['feeEstimado'];
             $totalEstimado = $_POST['totalEstimado'];
             $this->mostrarEnAdminModel->editProforma($id, $fechaProforma, $dniChofer,$nombreCliente, $cuitCliente, $direccionCliente, $clienteTelefono, $emailCliente, $origenViaje, $destinoViaje, $fechaCarga, $tipoCarga, $pesoNeto, $kilometrosEstimado, $combustibleEstimado, $etdCosteoEstimado, $etaCosteoEstimado, $viaticosEstimado, $peajesPesajesEstimado, $extrasEstimado, $hazardEstimado, $reeferEstimado, $feeEstimado, $totalEstimado);
-
+            $this->mostrarEnAdminModel->cambiarANoDisponible($dniChofer);
             $data['usuario'] = $_SESSION['usuario'];
             echo $this->render->render("view/proformaCargadaView.php");
 
