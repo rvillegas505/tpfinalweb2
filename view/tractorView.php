@@ -12,20 +12,6 @@
 
 <div class="container-md my-3 col-md-6">
     <form action="/tractor/procesarTractor" class="row g-3 needs-validation" method="POST" novalidate>
-        <!--<div class="form-group">
-            <label for="marca">Marca</label>
-            <input type="text" class="form-control" name="marca" id="marca" required>
-            <div class="invalid-feedback">
-                Ingrese marca del tractor.
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="marca">Modelo</label>
-            <input type="text" class="form-control" name="modelo" id="modelo" required>
-            <div class="invalid-feedback">
-                Ingrese modelo del tractor.
-            </div>
-        </div>-->
         <label for="marca">Marca</label>
         <select class="form-select" aria-label="Default select example" name="marca" required>
             <option value="IVECO" selected>IVECO</option>

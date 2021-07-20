@@ -230,14 +230,6 @@
         </div>
     </div>
 
-    <!--<div class="form-group">
-        <label for="totalEstimado">Total</label>
-        <input type="number" class="form-control" name="totalEstimado" id="totalEstimado" required>
-        <div class="invalid-feedback">
-            Complete el campo.
-        </div>
-    </div>-->
-
     <!--SECCION Personal-->
 
     <hr class="bg-dark d-block py-1">
@@ -288,66 +280,5 @@
 </div>
 
 <script src="../functions.js"></script>
-<!--
-    SECCION Costeo REAL
-    <hr class="bg-dark d-block py-1">
-    <h4 class="my-3">Costeo (REAL)</h4>
-
-    <div class="form-group">
-        <label for="kilometrosReal">Kilometros (REAL)</label>
-        <input type="number" class="form-control" name="kilometrosReal" id="kilometrosReal">
-    </div>
-
-    <div class="form-group">
-        <label for="combustibleReal">Combustible(REAL)</label>
-        <input type="number" class="form-control" name="combustibleReal" id="combustibleReal">
-    </div>
-
-    <div class="form-group">
-        <label for="etdCosteoReal">ETD(REAL)</label>
-        <input type="number" class="form-control" name="etdCosteoReal" id="etdCosteoReal">
-    </div>
-
-    <div class="form-group">
-        <label for="etaCosteoReal">ETA(REAL)</label>
-        <input type="number" class="form-control" name="etaCosteoReal" id="etaCosteoReal">
-    </div>
-
-    <div class="form-group">
-        <label for="viaticosReal">Viaticos(REAL)</label>
-        <input type="number" class="form-control" name="viaticosReal" id="viaticosReal">
-    </div>
-
-    <div class="form-group">
-        <label for="peajesPesajesReal">Peajes y Pesajes(REAL)</label>
-        <input type="number" class="form-control" name="peajesPesajesReal" id="peajesPesajesReal">
-    </div>
-
-    <div class="form-group">
-        <label for="extrasReal">Extras(REAL)</label>
-        <input type="number" class="form-control" name="extrasReal" id="extrasReal">
-    </div>
-
-    <div class="form-group">
-        <label for="hazardReal">Hazard(REAL)</label>
-        <input type="number" class="form-control" name="hazardReal" id="hazardReal">
-    </div>
-
-    <div class="form-group">
-        <label for="reeferReal">Reefer(REAL)</label>
-        <input type="number" class="form-control" name="reeferReal" id="reeferReal">
-    </div>
-
-    <div class="form-group">
-        <label for="feeReal">Fee(REAL)</label>
-        <input type="number" class="form-control" name="feeReal" id="feeReal">
-    </div>
-
-    <div class="form-group">
-        <label for="totalReal">Total (REAL)</label>
-        <input type="number" class="form-control" name="totalReal" id="totalReal">
-    </div>
-
--->
 
 {{>footer}}

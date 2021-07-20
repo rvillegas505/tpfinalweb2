@@ -50,8 +50,7 @@
         <div class="col-12" id="mapa" style="width:500px; height:400px;"></div>
         <div class="col-6">latitud <h5 id="latitud"></h5></div>
         <div class="col-6">longitud <h5 id="longitud"></h5></div>   
-    </div>        
-        <!-- <a href="/homechofer/mostrarubicacion"><button class="btn btn-dark my-3">Obtener ubicacion</button></a> -->
+    </div>
     <button class="btn btn-danger my-3" onclick="loadMap()">Mostrar Ubicacion</button>
     {{/viaje}}    
 </div>
